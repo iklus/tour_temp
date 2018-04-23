@@ -1,0 +1,267 @@
+/* Variables */
+:root {
+  --text-color: #CA5699;
+  --text-font: 'Proxima Nova', 'Khula', Arial, sans-serif;
+  --text-weight: bold;
+  --scrollbar-color: #CA5699;
+  --background-text-color: white;
+}
+
+
+/* VR Tour UI Elements */
+#tourUI {
+  z-index: 5;
+}
+
+.uiButton {
+  position: absolute;
+  height: 3vw;
+  width: 3vw;
+  bottom: 1vw;
+  border: 0;
+  
+}
+
+#menu_map {
+  left: 1vw;
+}
+
+#menu_vr {
+  right: 13vw;
+}
+
+#menu_home {
+  right: 9vw;
+}
+
+#menu_sound {
+  right: 5vw;
+}
+
+#menu_robbie { 
+  right: 1vw;
+}
+
+#tourNav {
+  position: absolute;
+  right: 50vw;
+}
+
+
+#rightArrow {
+  position: absolute;
+  height: 3vw;
+  width: 3vw;
+  bottom: 1vw;
+  left: 10vw;
+  transform: rotate(90deg);
+}
+
+#leftArrow {
+  position: absolute;
+  height: 3vw;
+  width: 3vw;
+  bottom: 1vw;
+  right: 10vw;
+  transform: rotate(-90deg);
+}
+
+#locationText {
+  position: absolute;
+  max-height: 3vw;
+  height: none;
+  width: 18vw;
+  left: -9vw;
+  bottom: 1vw;
+  overflow: auto;
+  background-color: var(--background-text-color);
+  opacity: 0.8;
+  border-radius: 5px;
+  color: var(--text-color);
+  scrollbar-base-color: var(--scrollbar-color);
+  font-family: var(--text-font);
+  text-align: center;
+  font-size: 1.5vw;
+  font-weight: var(--text-weight);
+  padding: 10px 0px;
+}
+
+
+#robbieImg {
+  position: absolute;
+  height: auto;
+  width: 12vw;
+  right: 2vw;
+  bottom: 11vw;
+}
+
+#robbieText {
+  position: absolute;
+  height: 4vw;
+  width: 14vw;
+  right: 1vw;
+  bottom: 5vw;
+  overflow: auto;
+  background-color: var(--background-text-color);
+  opacity: 0.8;
+  border-radius: 5px;
+  color: var(--text-color);
+  scrollbar-base-color: var(--scrollbar-color);
+  font-family: var(--text-font);
+  font-weight: var(--text-weight);
+  padding: 10px;
+}
+
+
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+  
+::-webkit-scrollbar-track {
+  border: 1px solid var(--scrollbar-color);
+  border-radius: 10px;
+}
+  
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-color);  
+  border-radius: 10px;
+}
+
+
+
+@media only screen and (max-width: 1000px){
+  .uiButton {
+    height: 6vw;
+    width: 6vw;
+    bottom: 2vw; 
+  }
+
+  #menu_map {
+    left: 2vw;
+  }
+  
+  #menu_vr {
+    right: 26vw;
+  }
+  
+  #menu_home {
+    right: 18vw;
+  }
+  
+  #menu_sound {
+    right: 10vw;
+  }
+  
+  #menu_robbie { 
+    right: 2vw;
+  }
+
+  #rightArrow {
+    height: 6vw;
+    width: 6vw;
+    bottom: 2vw;
+    left: 10vw;
+  }
+  
+  #leftArrow {
+    height: 6vw;
+    width: 6vw;
+    bottom: 2vw;
+    right: 10vw;
+  }
+  
+  #locationText {
+    max-height: none;
+    height: 4vw;
+    width: 18vw;
+    left: -9vw;
+    bottom: 2vw;
+    font-size: medium;
+  }
+
+  #robbieImg {
+    width: 24vw;
+    right: 5vw;
+    bottom: 22vw;
+  }
+
+  #robbieText {
+    height: 8vw;
+    width: 28vw;
+    right: 2vw;
+    bottom: 10vw;
+    font-size: medium;
+  }
+}
+
+
+@media only screen and (max-width: 500px) {
+  .uiButton {
+    height: 16vw;
+    width: 16vw;
+    bottom: 2vw; 
+  }
+
+  #menu_map {
+    left: 2vw;
+  }
+  
+  #menu_vr {
+    right: 62vw;
+  }
+  
+  #menu_home {
+    right: 42vw;
+  }
+  
+  #menu_sound {
+    right: 22vw;
+  }
+  
+  #menu_robbie { 
+    right: 2vw;
+  }
+
+  #rightArrow {
+    height: 16vw;
+    width: 16vw;
+    bottom: 22vw;
+    left: 32vw;
+  }
+  
+  #leftArrow {
+    height: 16vw;
+    width: 16vw;
+    bottom: 22vw;
+    right: 32vw;
+  }
+  
+  #locationText {
+    height: 10vw;
+    width: 58vw;
+    left: -29vw;
+    bottom: 24vw;
+    font-size: 6vw;
+  }
+
+  #robbieImg {
+    width: 20vw;
+    right: 74vw;
+    /*bottom: 22vw;*/
+    top: 4vw;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+
+  #robbieText {
+    height: 14vw;
+    width: 58vw;
+    right: 6vw;
+    /*bottom: 22vw;*/
+    top: 4vw;
+    font-size: large;
+  }
+}
