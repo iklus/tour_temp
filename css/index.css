@@ -41,7 +41,7 @@ nav {
 }
 
 .jumbotron {
-  background: url("../images/splashpage/campus_carousel.JPG") no-repeat center center; 
+  background: url("images/splashpage/campus_carousel.JPG") no-repeat center center; 
   background-size: cover;
   position: relative;
   min-height: 90%;
