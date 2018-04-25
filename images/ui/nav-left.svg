@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>nav/left</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 8.88888889e-05 63.9999111 8.88888889e-05 63.9999111 64 0 64"></polygon>
+    </defs>
+    <g id="nav/left" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="BACKWARD">
+            <g id="Group-3">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M-8.88888889e-05,32.0000889 C-8.88888889e-05,14.3272 14.3270222,8.88888889e-05 31.9999111,8.88888889e-05 C49.6728,8.88888889e-05 63.9999111,14.3272 63.9999111,32.0000889 C63.9999111,49.6729778 49.6728,64.0000889 31.9999111,64.0000889 C14.3270222,64.0000889 -8.88888889e-05,49.6729778 -8.88888889e-05,32.0000889" id="Fill-1" fill="#FFFFFF" mask="url(#mask-2)"></path>
+            </g>
+            <path d="M41.2477333,20.5634667 L29.8112889,31.9999111 L41.2477333,43.4363556 C43.1570667,45.3456889 43.1570667,48.4416889 41.2477333,50.3510222 C39.3384,52.2603556 36.2432889,52.2603556 34.3339556,50.3510222 L15.9828444,31.9999111 L34.3339556,13.6496889 C36.2432889,11.7403556 39.3384,11.7403556 41.2477333,13.6496889 C43.1570667,15.5590222 43.1570667,18.6541333 41.2477333,20.5634667" id="Fill-4" fill="#C6579A"></path>
+        </g>
+    </g>
+</svg>
