@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>FORWARD</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 8.88888889e-05 63.9998222 8.88888889e-05 63.9998222 64 0 64"></polygon>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="nav/right">
+            <g id="FORWARD">
+                <g id="Group-3">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M63.9998222,32.0000889 C63.9998222,49.6729778 49.6727111,64.0000889 31.9998222,64.0000889 C14.3269333,64.0000889 -0.000177777778,49.6729778 -0.000177777778,32.0000889 C-0.000177777778,14.3272 14.3269333,8.88888889e-05 31.9998222,8.88888889e-05 C49.6727111,8.88888889e-05 63.9998222,14.3272 63.9998222,32.0000889" id="Fill-1" fill="#FFFFFF" mask="url(#mask-2)"></path>
+                </g>
+                <path d="M22.7524444,43.4367111 L34.1888889,32.0002667 L22.7524444,20.5638222 C20.8431111,18.6544889 20.8431111,15.5584889 22.7524444,13.6491556 C24.6617778,11.7398222 27.7568889,11.7398222 29.6662222,13.6491556 L48.0173333,32.0002667 L29.6662222,50.3504889 C27.7568889,52.2598222 24.6617778,52.2598222 22.7524444,50.3504889 C20.8431111,48.4411556 20.8431111,45.3460444 22.7524444,43.4367111" id="Fill-4" fill="#C6579A"></path>
+            </g>
+        </g>
+    </g>
+</svg>
