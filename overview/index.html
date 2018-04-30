@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Tour Output</title>
+	</head>
+	<body>
+		<div id="tours">
+		</div>
+		<script type="application/javascript">
+			var data = {
+	"tours": {
+		"cbdi_inpatient_tour": {
+			"name": "CBDI Impatient Tour",
+			"locations": [
+				"flagpole_building_a",
+				"welcome_desk",
+				"building_a_lobby",
+				"4th_floor_lobby",
+				"stardome_hallway",
+				"family_lounge",
+				"child_life_activity_center",
+				"nurses_station",
+				"inpatient_room"
+			]
+		},
+		"proton_pediatric_tour": {
+			"name": "Proton Pediatric Tour",
+			"locations": [
+				"flagpole_building_b",
+				"building_b_lobby",
+				"family_center",
+				"building_b_childrens_desk",
+				"ct_scanner",
+				"childrens_gantry_entrance",
+				"childrens_gantry_hallway",
+				"childrens_gantry",
+				"childrens_gantry_control_room",
+				"childrens_gantry_machine",
+				"celebration_garden"
+			]
+		},
+		"proton_adult_tour": {
+			"name": "Proton Adult Tour",
+			"locations": [
+				"outside_ucmc",
+				"ucmc_front_desk",
+				"ucmc_waiting_area",
+				"building_b_uc_desk",
+				"ucmc_gantry_entrance",
+				"ucmc_gantry_hallway",
+				"ucmc_gantry",
+				"ucmc_gantry_machine"
+			]
+		},
+		"proton_research_tour": {
+			"name": "Proton Research Tour",
+			"locations": [
+				"research_gantry",
+				"inside_research_gantry",
+				"childrens_gantry_control_room",
+				"cyclotron_pump",
+				"cyclotron_stairs_top",
+				"cyclotron_and_beam_line",
+				"beam_line_door_1",
+				"beam_line_turn",
+				"gantry_connection",
+				"beam_line"
+			]
+		},
+		"cyclotron_tour": {
+			"name": "Cyclotron Tour",
+			"locations": [
+				"childrens_gantry_control_room",
+				"cyclotron_pump",
+				"cyclotron_stairs_top",
+				"cyclotron_and_beam_line",
+				"beam_line_door_1",
+				"beam_line_turn",
+				"gantry_connection",
+				"beam_line"
+			]
+		},
+		"cbdi_outpatient_tour": {
+			"name": "CBDI Outpatient Tour",
+			"locations": [
+				"flagpole_building_b",
+				"campus_info",
+				"outpatient_entrance",
+				"outpatient_triage_desk",
+				"outpatient_nurses_station",
+				"outpatient_room_bed",
+				"outpatient_nutrition",
+				"outpatient_room_chair"
+			]
+		}
+	},
+	"maps": {
+		"map_id_goes_here": {
+			"name": "Test Map Name",
+			"locations": {
+				"beam_line_turn": {
+					"x": 0,
+					"y": 0
+				},
+				"beam_line_door_1": {
+					"x": 0,
+					"y": 0
+				}
+			}
+		}
+	},
+	"locations": {
+		"beam_line_turn": {
+			"name": "Beam Line Turn",
+			"rotation": {
+				"x": 0.229,
+				"y": -130.520,
+				"z": 0
+			},
+			"transcript": "The beam line accelerates the proton beam to two thirds the speed of light."
+		},
+		"beam_line_door_1": {
+			"name": "Beam Line: Door 1",
+			"rotation": {
+				"x": 1.146,
+				"y": 26.241,
+				"z": 0
+			},
+			"transcript": "The beam line carries the proton beam inside of a vacuum sealed two inch pipe."
+		},
+		"beam_line": {
+			"name": "Beam Line",
+			"rotation": {
+				"x": -1.146,
+				"y": 163.522,
+				"z": 0
+			},
+			"transcript": ""
+		},
+		"building_b_lobby": {
+			"name": "Building B: Lobby",
+			"rotation": {
+				"x": 7.792,
+				"y": -149.42,
+				"z": 0
+			},
+			"transcript": "This is the registration desk. You will check in here before going to your Proton Therapy or Cancer & Blood Diseases appointment."
+		},
+		"building_b_childrens_desk": {
+			"name": "Building B: Children's Desk",
+			"rotation": {
+				"x": 0.917,
+				"y": -130.061,
+				"z": 0
+			},
+			"transcript": ""
+		},
+		"celebration_garden": {
+			"name": "Celebration Garden",
+			"rotation": {
+				"x": 0,
+				"y": 198.358,
+				"z": 0
+			},
+			"transcript": "On the last day of treatment, we celebrate in the Celebration Garden."
+		},
+		"childrens_gantry_control_room": {
+			"name": "Children's Gantry Control Room",
+			"rotation": {
+				"x": 0.688,
+				"y": 101.872,
+				"z": 0
+			},
+			"transcript": "Here is where the cyclotron is controlled and monitored."
+		},
+		"childrens_gantry_hallway": {
+			"name": "Children's Gantry Hallway",
+			"rotation": {
+				"x": -2.750,
+				"y": -24.064,
+				"z": 0
+			},
+			"transcript": "This winding hallway made of thick concrete walls is here to absorb any secondary radiation."
+		},
+		"childrens_gantry_machine": {
+			"name": "Children's Gantry Machine",
+			"rotation": {
+				"x": 2.979,
+				"y": 129.947,
+				"z": 0
+			},
+			"transcript": "Here is where the beam line connects to the back of the gantry."
+		},
+		"childrens_gantry": {
+			"name": "Children's Gantry",
+			"rotation": {
+				"x": -6.073,
+				"y": -28.419,
+				"z": 0
+			},
+			"transcript": "Here radiation therapy staff help patients prepare for treatment. First, imaging is performed to aim the proton beam, and then the treatment is delivered. Treatment session can last for about 45 minutes, but the beam will only be on for a few minutes."
+		},
+		"gantry_connection": {
+			"name": "Gantry Connection",
+			"rotation": {
+				"x": 0.917,
+				"y": 88.006,
+				"z": 0
+			},
+			"transcript": "Here is where the beam line enters the back of the research gantry."
+		},
+		"ct_scanner": {
+			"name": "CT Scanner",
+			"rotation": {
+				"x": -2.177,
+				"y": -155.615,
+				"z": 0
+			},
+			"transcript": "In proton therapy treatment, a CT scan is taken first so that the doctors can figure out the best path for the proton beam to travel."
+		},
+		"cyclotron_and_beam_line": {
+			"name": "Cyclotron & Beam Line",
+			"rotation": {
+				"x": -0.917,
+				"y": 18.335,
+				"z": 0
+			},
+			"transcript": ""
+		},
+		"cyclotron_control_room": {
+			"name": "Cyclotron Control Room",
+			"rotation": {
+				"x": 9.397,
+				"y": -184.149,
+				"z": 0
+			},
+			"transcript": "The larger cylinder is the cyclotron and the long stainless steel tube to the right of it is the beam line."
+		},
+		"cyclotron_pump": {
+			"name": "Cyclotron Pump",
+			"rotation": {
+				"x": 1.833,
+				"y": -135.791,
+				"z": 0
+			},
+			"transcript": "The cyclotron accelerates protons using a static magnetic field and a rapidly changing electric field."
+		},
+		"cyclotron_stairs_top": {
+			"name": "Cyclotron Stairs Top",
+			"rotation": {
+				"x": -13.986,
+				"y": -209.473,
+				"z": 0
+			},
+			"transcript": "A hydrogen atom is made up of one proton and one electron. The cyclotron removes the electron and sends the proton down the beam line."
+		},
+		"family_center": {
+			"name": "Family Center",
+			"rotation": {
+				"x": -0.573,
+				"y": -219.214,
+				"z": 0
+			},
+			"transcript": "This is the Family Resource Center. This is where families can take time away to work or relax."
+		},
+		"flagpole_building_a": {
+			"name": "Flagpole",
+			"rotation": {
+				"x": 12.032,
+				"y": 82.162,
+				"z": 0
+			},
+			"transcript": ""
+		},
+		"flagpole_building_b": {
+			"name": "Flagpole",
+			"rotation": {
+				"x": 9.969,
+				"y": -35.180,
+				"z": 0
+			},
+			"transcript": ""
+		},
+		"childrens_gantry_entrance": {
+			"name": "Children's Gantry Entrance",
+			"rotation": {
+				"x": -4.354,
+				"y": -18.908,
+				"z": 0
+			},
+			"transcript": "This is the entrance to the gantry of the Cincinnati Children's. A gantry uses a proton beam to destroy kill cancer cells while minimizing damage to surrounding healthy tissue and organs in a process called proton therapy."
+		},
+		"ucmc_gantry_hallway": {
+			"name": "UCMC Gantry Hallway",
+			"rotation": {
+				"x": -2.979,
+				"y": -27.158,
+				"z": 0
+			},
+			"transcript": "This winding hallway made of thick concrete walls is here to absorb any secondary radiation."
+		},
+		"ucmc_gantry_entrance": {
+			"name": "UCMC Gantry Entrance",
+			"rotation": {
+				"x": -3.438,
+				"y": -13.751,
+				"z": 0
+			},
+			"transcript": "This is the entrance to the gantry of the UCMC. A gantry uses a proton beam to destroy cancer cells while minimizing damage to surrounding healthy tissue and organs."
+		},
+		"outside_ucmc": {
+			"name": "Outside UCMC",
+			"rotation": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"transcript": ""
+		},
+		"inside_research_gantry": {
+			"name": "Inside Research Gantry",
+			"rotation": {
+				"x": 17.303,
+				"y": -42.972,
+				"z": 0
+			},
+			"transcript": "Here is the welcome desk of the Liberty A building"
+		},
+		"research_gantry": {
+			"name": "Research Gantry",
+			"rotation": {
+				"x": 1.031,
+				"y": -34.148,
+				"z": 0
+			},
+			"transcript": ""
+		},
+		"building_b_uc_desk": {
+			"name": "Building B: UC Desk",
+			"rotation": {
+				"x": 1.602,
+				"y": -232.162,
+				"z": 0
+			},
+			"transcript": ""
+		},
+		"ucmc_front_desk": {
+			"name": "UCMC Front Desk",
+			"rotation": {
+				"x": -7.719,
+				"y": -34.263,
+				"z": 0
+			},
+			"transcript": "Here is the welcome desk of the Liberty A building"
+		},
+		"ucmc_gantry_machine": {
+			"name": "UCMC Gantry Machine",
+			"rotation": {
+				"x": -2.636,
+				"y": -369.558,
+				"z": 0
+			},
+			"transcript": ""
+		},
+		"ucmc_gantry": {
+			"name": "UCMC Gantry",
+			"rotation": {
+				"x": -0.344,
+				"y": 66.692,
+				"z": 0
+			},
+			"transcript": "Here radiation therapy staff help patients prepare for treatment. First, imaging is performed to aim the proton beam, and then the treatment is delivered. Treatment session can last for about 45 minutes, but the beam will be on for only a few minutes."
+		},
+		"ucmc_waiting_area": {
+			"name": "UCMC Waiting Area",
+			"rotation": {
+				"x": 0,
+				"y": -172.231,
+				"z": 0
+			},
+			"transcript": "This leads to the first floor where you will find the first floor welcome desk and cafeteria."
+		},
+		"welcome_desk": {
+			"name": "Welcome Desk",
+			"rotation": {
+				"x": -0.573,
+				"y": 26.700,
+				"z": 0
+			},
+			"transcript": "Here is the welcome desk of the Liberty A building"
+		},
+		"building_a_lobby": {
+			"name": "Building A: Lobby",
+			"rotation": {
+				"x": -1.719,
+				"y": 43.545,
+				"z": 0
+			},
+			"transcript": "Further down is the cafeteria."
+		},
+		"4th_floor_lobby": {
+			"name": "4th Floor: Lobby",
+			"rotation": {
+				"x": 0.688,
+				"y": 8.594,
+				"z": 0
+			},
+			"transcript": "This is the inpatient registration desk.  They will get you checked in for your inpatient stay."
+		},
+		"stardome_hallway": {
+			"name": "Stardome Hallway",
+			"rotation": {
+				"x": 0.802,
+				"y": -357.640,
+				"z": 0
+			},
+			"transcript": ""
+		},
+		"family_lounge": {
+			"name": "Family Lounge",
+			"rotation": {
+				"x": 1.490,
+				"y": -653.286,
+				"z": 0
+			},
+			"transcript": "Welcome to the Family Lounge. This is where families can take a break and enjoy a meal."
+		},
+		"child_life_activity_center": {
+			"name": "Child Life Activity Center",
+			"rotation": {
+				"x": -0.229,
+				"y": -909.054,
+				"z": 0
+			},
+			"transcript": "Here is the Child Life Activity Center. Within it you will find many toys and activities for patients to play and interact with. Hours vary, so check with your care team to see when it is open."
+		},
+		"nurses_station": {
+			"name": "Nurses Station",
+			"rotation": {
+				"x": -0.688,
+				"y": -867.343,
+				"z": 0
+			},
+			"transcript": "Here is the nurses station. From here the healthcare team can see the entire hallway and coordinate care for the unit."
+		},
+		"inpatient_room": {
+			"name": "Inpatient Room",
+			"rotation": {
+				"x": -1.719,
+				"y": -844.196,
+				"z": 0
+			},
+			"transcript": "Each inpatient room is equipped with a monitor for vital signs, a white board for updates and Telemedicine to video call with with members of your care team not on site."
+		},
+		"campus_info": {
+			"name": "Children's Campus Info",
+			"rotation": {
+				"x": -1.719,
+				"y": -844.196,
+				"z": 0
+			},
+			"transcript": ""
+		},
+		"outpatient_entrance": {
+			"name": "CBDI Outpatient Entrance",
+			"rotation": {
+				"x": -1.719,
+				"y": -844.196,
+				"z": 0
+			},
+			"transcript": ""
+		},
+		"outpatient_triage_desk": {
+			"name": "Outpatient Triage Desk",
+			"rotation": {
+				"x": -1.719,
+				"y": -844.196,
+				"z": 0
+			},
+			"transcript": ""
+		},
+		"outpatient_nurses_station": {
+			"name": "Outpatient Nurses Station",
+			"rotation": {
+				"x": -1.719,
+				"y": -844.196,
+				"z": 0
+			},
+			"transcript": ""
+		},
+		"outpatient_room_bed": {
+			"name": "Outpatient Room 1",
+			"rotation": {
+				"x": -1.719,
+				"y": -844.196,
+				"z": 0
+			},
+			"transcript": ""
+		},
+		"outpatient_nutrition": {
+			"name": "Outpatient Nutrition Room",
+			"rotation": {
+				"x": -1.719,
+				"y": -844.196,
+				"z": 0
+			},
+			"transcript": ""
+		},
+		"outpatient_room_chair": {
+			"name": "Outpatient Room 2",
+			"rotation": {
+				"x": -1.719,
+				"y": -844.196,
+				"z": 0
+			},
+			"transcript": ""
+		}
+	}
+};
+			window.onload = function() {
+				var tours_div = document.getElementById('tours');
+				Object.keys(data.tours).forEach(function(key) {
+					var h1 = document.createElement("h1");
+					h1.appendChild(document.createTextNode(data.tours[key].name));
+					tours_div.appendChild(h1);
+					data.tours[key].locations.forEach(function(location) {
+						var h2 = document.createElement("h2");
+						h2.appendChild(document.createTextNode(data.locations[location].name));
+						var img = document.createElement("img");
+						img.src = location + ".jpg";
+						img.width = 500;
+						var p = document.createElement("p");
+						p.appendChild(document.createTextNode(data.locations[location].transcript));
+						tours_div.appendChild(h2);
+						//tours_div.appendChild(p);
+						tours_div.appendChild(img);
+					});
+					var hr = document.createElement("hr");
+					tours_div.appendChild(hr);
+				});
+			};
+		</script>
+	</body>
+</html>
