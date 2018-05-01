@@ -50,7 +50,7 @@ function getAllData() {
 			"locations": [
 				"research_gantry",
 				"inside_research_gantry",
-				"childrens_gantry_control_room",
+				"cyclotron_control_room",
 				"cyclotron_pump",
 				"cyclotron_stairs_top",
 				"cyclotron_and_beam_line",
@@ -63,7 +63,7 @@ function getAllData() {
 		"cyclotron_tour": {
 			"name": "Cyclotron Tour",
 			"locations": [
-				"childrens_gantry_control_room",
+				"cyclotron_control_room",
 				"cyclotron_pump",
 				"cyclotron_stairs_top",
 				"cyclotron_and_beam_line",
