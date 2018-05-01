@@ -20,11 +20,15 @@
 						var h2 = document.createElement("h2");
 						h2.appendChild(document.createTextNode(data.locations[location].name));
 						var img = document.createElement("img");
-						img.src = location + ".jpg";
+						img.src = "../images/360/" + location + ".jpg";
 						img.width = 500;
 						var p = document.createElement("p");
 						p.appendChild(document.createTextNode(data.locations[location].transcript));
+						var audio = document.createElement("audio");
+						audio.setAttribute("src","../audio/" + location + ".mp3");
+						audio.controls = true;
 						tours_div.appendChild(h2);
+						tours_div.appendChild(audio);
 						tours_div.appendChild(p);
 						tours_div.appendChild(img);
 					});
