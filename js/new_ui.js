@@ -1,3 +1,4 @@
+let sky;
 // Declare action bar UI elements
 let action_btn_el;
 let robbie;
@@ -99,6 +100,7 @@ function map_btn_click() {
 function nav_panel_click() {
     current_location_index = this.dataset.location;
     refreshNavPanel();
+    setupImage();
 }
 
 function populateNavPanel() {
@@ -119,6 +121,7 @@ function populateNavPanel() {
         i++;
     });
     refreshNavPanel();
+    setupImage();
 }
 
 function nav_btn_click() {
@@ -135,6 +138,7 @@ function nav_btn_click() {
     }
     console.log(current_location_index);
     refreshNavPanel();
+    setupImage();
 }
 
 function action_btn_click() {
@@ -142,16 +146,26 @@ function action_btn_click() {
     this.className = "btn-floating btn-large custom-float-btn";
 }
 
-function loadedAssets() {
-    console.log(this);
+function setupImage() {
+    let location = data.tours[tour_id].locations[current_location_index];
+    sky.setAttribute("material", "src", "#" + location);
+    let rotation = data.locations[location].rotation;
+    document.getElementById('mainCamera').setAttribute(
+        'rotation',
+        rotation.x + " " + rotation.y + " " + rotation.z
+    );
 }
-function addAssets() {
+
+function assetsLoaded() {
+    setupImage();
+}
+
+function loadAssets() {
     let scene = document.querySelector("a-scene");
     let assets = document.createElement("a-assets");
-    assets.addEventListener("loaded",loadedAssets);
+    assets.addEventListener("loaded", assetsLoaded);
     data.tours[tour_id].locations.forEach(function(location) {
         let asset = document.createElement("img");
-        asset.addEventListener("load",loadedAssets);
         asset.id = location;
         asset.src = "images/360/" + location + ".jpg";
         assets.appendChild(asset);
@@ -162,6 +176,10 @@ function addAssets() {
 window.onload = function() {
     // Load JSON
     data = getAllData();
+
+    loadAssets();
+
+    sky           = document.getElementById("image-360");
 
     // UI Elements
     robbie        = document.getElementById("robbie");
@@ -187,6 +205,7 @@ window.onload = function() {
 
     refreshButtons();
     populateNavPanel();
+
     // Setup action button
     action_btn_el = document.querySelector(".fixed-action-btn");
     robbie.addEventListener("mouseup", action_btn_click);
