@@ -7,6 +7,7 @@ let vr_btn;
 let captions_btn;
 let sound_btn;
 let map_btn;
+let captions_text;
 
 let captions_icon;
 let sound_icon;
@@ -27,9 +28,7 @@ let states = {
 
 let current_location_index = 0;
 let data;
-
-// TODO: Get this from GET parameters
-let tour_id = "cbdi_inpatient_tour";
+let tour_id;
 
 function showNavButton(button, state = false, pulse = false) {
     if(state) {
@@ -87,6 +86,7 @@ function vr_btn_click() {
 
 function captions_btn_click() {
     setState("captions", !states.captions);
+    refreshCaption();
 }
 
 function sound_btn_click() {
@@ -125,6 +125,10 @@ function populateNavPanel() {
 }
 
 function nav_btn_click() {
+    if(this == next_btn && current_location_index == data.tours[tour_id].locations.length - 1) {
+        // Handle more button
+        window.location.href = "/#tours";
+    }
     if(this == previous_btn && current_location_index > 0) {
         current_location_index--;
     }
@@ -132,17 +136,14 @@ function nav_btn_click() {
         current_location_index++;
         this.className = "btn-floating btn-large custom-float-btn";
     }
-    if(this == next_btn && current_location_index == data.tours[tour_id].locations.length - 1) {
-        // Handle more button
-        console.log("More button clicked!");
-    }
+
     console.log(current_location_index);
     refreshNavPanel();
     setupImage();
 }
 
 function action_btn_click() {
-    // Remove pulse
+    // Remove pulse after click
     this.className = "btn-floating btn-large custom-float-btn";
 }
 
@@ -154,10 +155,25 @@ function setupImage() {
         'rotation',
         rotation.x + " " + rotation.y + " " + rotation.z
     );
+    refreshCaption();
+}
+
+function refreshCaption() {
+    let location = data.tours[tour_id].locations[current_location_index];
+    captions_text.innerText = data.locations[location].transcript;
+    if(captions_text.innerText.length == 0 || states.captions == false) {
+        // Don't show caption
+        captions_text.style.display = "none";
+    } else {
+        captions_text.style.display = "block";
+    }
 }
 
 function assetsLoaded() {
+    document.querySelector(".overlay").style.display = "none";
     setupImage();
+    action_btn.close();
+    nav_panel.close();
 }
 
 function loadAssets() {
@@ -173,9 +189,24 @@ function loadAssets() {
     scene.appendChild(assets);
 }
 
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
 window.onload = function() {
     // Load JSON
     data = getAllData();
+
+    tour_id = getParameterByName("tour");
+    if(!(tour_id in data.tours)) {
+        tour_id = "cbdi_inpatient_tour";
+    }
 
     loadAssets();
 
@@ -202,6 +233,7 @@ window.onload = function() {
     captions_icon = document.getElementById("captions_icon");
     sound_icon    = document.getElementById("sound_icon");
 
+    captions_text = document.getElementById("captions_text");
 
     refreshButtons();
     populateNavPanel();
@@ -230,6 +262,8 @@ window.onload = function() {
         this.dropdownEl.style.width = positionInfo.width + 'px';
         this.dropdownEl.style.transformOrigin = (positionInfo.horizontalAlignment === 'left' ? '50%' : '100%') + " " + (positionInfo.verticalAlignment === 'top' ? '0' : '100%');
     };
+    action_btn.open();
+    nav_panel.open();
     // Bug fix: nav_panel must be closed when window is resized
     function resizeHandler() {
         nav_panel.close();
