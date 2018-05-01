@@ -20,17 +20,17 @@
     <div class="fixed-action-btn">
         <a class="btn-floating btn-large custom-float-btn pulse"><img src="images/ui/menu-robbie.svg" width=48 height=48></a>
         <ul>
-            <li><a class="btn-floating btn-large white"><img src="images/ui/menu-map.svg" width=48 height=48></a></li>
-            <li><a class="btn-floating btn-large white"><img src="images/ui/menu-sound-on.svg" width=48 height=48></a></li>
-            <li><a class="btn-floating btn-large white"><img src="images/ui/menu-captions-on.svg" width=48 height=48></a></li>
-            <li><a class="btn-floating btn-large white"><img src="images/ui/menu-headset.svg" width=48 height=48></a></li>
-            <li><a class="btn-floating btn-large white"><img src="images/ui/menu-home.svg" width=48 height=48></a></li>
+            <li><a id="map_btn" class="btn-floating btn-large white"><img src="images/ui/menu-map.svg" width=48 height=48></a></li>
+            <li><a id="sound_btn" class="btn-floating btn-large white"><img id="sound_icon" src="images/ui/menu-sound-on.svg" width=48 height=48></a></li>
+            <li><a id="captions_btn" class="btn-floating btn-large white"><img id="captions_icon" src="images/ui/menu-captions-on.svg" width=48 height=48></a></li>
+            <li><a id="vr_btn" class="btn-floating btn-large white"><img src="images/ui/menu-vr.svg" width=48 height=48></a></li>
+            <li><a id="home_btn" class="btn-floating btn-large white" href="/#tours"><img src="images/ui/menu-home.svg" width=48 height=48></a></li>
         </ul>
     </div>
     <div class="pinned-footer">
         <table>
             <tr>
-                <td class="nav-buttons"><a class="btn-floating btn-large custom-float-btn pulse"><img src="images/ui/nav-left.svg" width=48 height=48></a></td>
+                <td class="nav-buttons"><a id="previous_btn" class="btn-floating btn-large custom-float-btn pulse"><img src="images/ui/nav-left.svg" width=48 height=48></a></td>
                 <td class="nav-dropup">
                     <a class="dropdown-trigger btn" data-target="dropdown-content">Flagpole</a>
                     <ul id="dropdown-content" class="dropdown-content">
@@ -45,40 +45,12 @@
                         <li><a>Child Life Activity Center</a></li>
                     </ul>
                 </td>
-                <td class="nav-buttons"><a class="btn-floating btn-large custom-float-btn pulse"><img src="images/ui/nav-right.svg" width=48 height=48></a></td>
+                <td class="nav-buttons"><a id="next_btn" class="btn-floating btn-large custom-float-btn pulse"><img src="images/ui/nav-right.svg" width=48 height=48></a></td>
             </tr>
         </table>
     </div>
 
-    <script type="text/javascript" src="js/materialize.js"></script>
-    <script type="application/javascript">
-        window.onload = function() {
-            var action_btn_el = document.querySelector('.fixed-action-btn');
-            var action_btn = M.FloatingActionButton.init(action_btn_el, {
-                direction: 'bottom',
-                hoverEnabled: false
-            });
-
-            var dropdown_el = document.querySelector('.dropdown-trigger');
-            var dropdown = M.Dropdown.init(dropdown_el, {coverTrigger: false});
-            dropdown._placeDropdown = function() {
-                // Updated to fix pop-up
-                // Set width before calculating positionInfo
-                var idealWidth = this.options.constrainWidth ? this.el.getBoundingClientRect().width : this.dropdownEl.getBoundingClientRect().width;
-                this.dropdownEl.style.width = idealWidth + 'px';
-
-                var positionInfo = this._getDropdownPosition();
-                this.dropdownEl.style.left = positionInfo.x + 'px';
-                this.dropdownEl.style.top = positionInfo.y + 'px';
-                this.dropdownEl.style.height = positionInfo.height + 'px';
-                this.dropdownEl.style.width = positionInfo.width + 'px';
-                this.dropdownEl.style.transformOrigin = (positionInfo.horizontalAlignment === 'left' ? '50%' : '100%') + " " + (positionInfo.verticalAlignment === 'top' ? '0' : '100%');
-            }
-            var resizeHandler = function() {
-                dropdown.close();
-            };
-            window.addEventListener("resize", resizeHandler);
-        }
-    </script>
+    <script type="application/javascript" src="js/materialize.js"></script>
+    <script type="application/javascript" src="js/new_ui.js"></script>
 </body>
 </html>
