@@ -1,5 +1,6 @@
+// Contains all of the data for each scene
 function getAllData() {
-  var all_adta = {
+  var all_data = {
   "tours": {
 		"cbdi_inpatient_tour": {
 			"name": "CBDI Impatient Tour",
