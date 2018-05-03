@@ -154,11 +154,6 @@
     display: table;
     padding: 10px 10px 0 10px;
 }
-@media only screen and (min-width: 500px) {
-    #map-div {
-        width: 500px;
-    }
-}
 
 #map-title {
     height: 24pt;
@@ -182,7 +177,6 @@
 
 #map-area {
     width: 100%;
-    background: lightgrey;
     position: relative;
     display: table-row;
 }
