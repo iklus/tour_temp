@@ -7,7 +7,7 @@
     <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="css/custom-ui.css">
     <link type="text/css" rel="stylesheet" href="fonts/fonts.css">
-    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
     <script type="text/javascript" src="js/all_data.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
@@ -29,7 +29,7 @@
         </ul>
     </div>
     <div class="pinned-footer">
-        <table>
+        <table id="nav-table">
             <tr>
                 <td class="nav-buttons"><a id="previous_btn" style="display: none;" class="btn-floating btn-large custom-float-btn"><img src="images/ui/nav-left.svg" width=48 height=48></a></td>
                 <td class="nav-dropup">
@@ -40,6 +40,12 @@
                 <td class="nav-buttons"><a id="next_btn" class="btn-floating btn-large custom-float-btn pulse"><img id="next_icon" src="images/ui/nav-right.svg" width=48 height=48></a></td>
             </tr>
         </table>
+    </div>
+    <div id="map-overlay">
+        <div id="map-div">
+            <div id="map-title">Test Map Title</div>
+            <div id="map-area">2</div>
+        </div>
     </div>
     <div class="overlay">
         <div class="vertical-center center-align">

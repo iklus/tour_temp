@@ -6,6 +6,7 @@
     bottom: 0;
     padding-bottom: 0;
     font-family: 'proxima_nova_altbold' !important;
+    z-index: 1001;
 }
 
 .pinned-footer .dropdown-trigger {
@@ -38,13 +39,13 @@
     box-shadow: none !important;
 }
 
-table {
+#nav-table {
     margin: 0 auto;
     line-height: 0;
 }
 
 @media only screen and (min-width: 500px) {
-    table {
+    #nav-table {
         width: 500px;
     }
 }
@@ -127,7 +128,7 @@ table {
     top:0;
     left:0;
     background:rgba(202,86,153,1);
-    z-index:998;
+    z-index:2000;
     width:100%;
     height:100vh;
     font-family: 'Proxima Nova' !important;
@@ -135,6 +136,53 @@ table {
     display: block;
 }
 
+#map-overlay {
+    position:fixed;
+    top:0;
+    left:0;
+    background:rgba(255,255,255,0.9);
+    z-index:1000;
+    width:100%;
+    height: 100%;
+    font-family: 'Proxima Nova' !important;
+    display: none;
+}
+#map-div {
+    background: grey;
+    margin: auto;
+    width: 100%;
+    height: calc(100% - 68px);
+    display: table;
+    padding: 10px 10px 0 10px;
+}
+@media only screen and (min-width: 500px) {
+    #map-div {
+        width: 500px;
+    }
+}
+
+#map-title {
+    height: 24pt;
+    font-size: 24pt;
+    color: #73b420;
+    background:darkblue;
+    font-family: 'proxima_nova_altbold' !important;
+    display: table-row;
+}
+
+#map-area {
+    width: 100%;
+    background: darkcyan;
+    position: relative;
+    display: table-row;
+}
+
+#stupidPadding {
+    height: 68px;
+    background: hotpink;
+    width: 100%;
+    display: table-row;
+}
 
 #loading-slide {
     width: 250px;
