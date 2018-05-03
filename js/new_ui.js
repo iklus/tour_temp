@@ -81,7 +81,14 @@ function setState(mode, state) {
 }
 
 function vr_btn_click() {
-    // Do what we need to enable VR
+    var scene = document.querySelector('a-scene');
+    if (scene) {
+        if (scene.hasLoaded) {
+            scene.enterVR();
+        } else {
+            scene.addEventListener('loaded', scene.enterVR);
+        }
+    }
 }
 
 function captions_btn_click() {
