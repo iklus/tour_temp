@@ -82,7 +82,6 @@ function setState(mode, state) {
     states[mode] = state;
     refreshButtons();
     refreshCaption();
-    refreshAudio();
 }
 
 function vr_btn_click() {
@@ -102,6 +101,7 @@ function captions_btn_click() {
 
 function sound_btn_click() {
     setState("sound", !states.sound);
+    refreshAudio();
 }
 
 function nav_panel_click() {
@@ -171,8 +171,12 @@ function setupImage() {
 
 function refreshCaption() {
     let location = data.tours[tour_id].locations[current_location_index];
-    captions_text.innerText = data.locations[location].transcript;
-    if(captions_text.innerText.length == 0 || states.captions == false || states.map) {
+    var innerText = data.locations[location].transcript;
+    if(innerText.length == 0) {
+        innerText = "You are at " + data.locations[location].name + ".";
+    }
+    captions_text.innerText = innerText;
+    if(states.captions == false || states.map) {
         // Don't show caption
         captions_text.style.display = "none";
     } else {
@@ -307,6 +311,7 @@ window.onload = function() {
     document.addEventListener("visibilitychange", function() {
         if (document.hidden) {
             setState("sound", false);
+            refreshAudio();
         }
       });
 
