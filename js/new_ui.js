@@ -102,10 +102,6 @@ function captions_btn_click() {
 
 function sound_btn_click() {
     setState("sound", !states.sound);
-(??)}
-(??)
-(??)function map_btn_click() {
-(??)    setState("map", true);
 }
 
 function nav_panel_click() {
@@ -228,12 +224,6 @@ function getParameterByName(name, url) {
     if (!results) return null;
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
-
-function onPageExit() {
-    console.log("exit");
-    setState("captions", false);
-    refreshCaption();
 }
 
 function map_exit_btn_click() {
