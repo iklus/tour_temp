@@ -148,7 +148,6 @@
     display: none;
 }
 #map-div {
-    background: grey;
     margin: auto;
     width: 100%;
     height: calc(100% - 68px);
@@ -165,14 +164,25 @@
     height: 24pt;
     font-size: 24pt;
     color: #73b420;
-    background:darkblue;
     font-family: 'proxima_nova_altbold' !important;
     display: table-row;
+    width: 100%;
+}
+#map-title-text {
+    display: inline-block;
+}
+
+#map_exit {
+    width: 48px;
+    height: 48px;
+    display: block;
+    float: right;
+    cursor: pointer;
 }
 
 #map-area {
     width: 100%;
-    background: darkcyan;
+    background: lightgrey;
     position: relative;
     display: table-row;
 }

@@ -1,4 +1,5 @@
 let sky;
+let map_overlay;
 // Declare action bar UI elements
 let action_btn_el;
 let robbie;
@@ -8,6 +9,7 @@ let captions_btn;
 let sound_btn;
 let map_btn;
 let captions_text;
+let map_exit_btn;
 
 let captions_icon;
 let sound_icon;
@@ -79,6 +81,8 @@ function refreshNavPanel() {
 function setState(mode, state) {
     states[mode] = state;
     refreshButtons();
+    refreshCaption();
+    refreshAudio();
 }
 
 function vr_btn_click() {
@@ -94,22 +98,15 @@ function vr_btn_click() {
 
 function captions_btn_click() {
     setState("captions", !states.captions);
-    refreshCaption();
 }
 
 function sound_btn_click() {
     setState("sound", !states.sound);
-    refreshAudio();
-}
-
-function map_btn_click() {
-    setState("map", true);
 }
 
 function nav_panel_click() {
     current_location_index = this.dataset.location;
     setState("captions", !states.captions);
-    refreshCaption();
     change_location();
 }
 
@@ -175,7 +172,7 @@ function setupImage() {
 function refreshCaption() {
     let location = data.tours[tour_id].locations[current_location_index];
     captions_text.innerText = data.locations[location].transcript;
-    if(captions_text.innerText.length == 0 || states.captions == false) {
+    if(captions_text.innerText.length == 0 || states.captions == false || states.map) {
         // Don't show caption
         captions_text.style.display = "none";
     } else {
@@ -190,16 +187,17 @@ function refreshAudio() {
         sounds[i].pause();
         sounds[i].currentTime = 0;
     }
-    if (states.sound) {
-        setTimeout(function(){document.getElementById(location + "Audio").play();}, 000);
+    console.log(states.sound);
+    if(states.sound && !states.map) {
+        setTimeout(function(){document.getElementById(location + "Audio").play();}, 500);
     }
 }
 
 function assetsLoaded() {
     document.querySelector(".overlay").style.display = "none";
     setupImage();
-    action_btn.close();
-    nav_panel.close();
+    setTimeout(function(){action_btn.close();}, 1500);
+    setTimeout(function(){nav_panel.close();}, 1500);
 }
 
 function loadAssets() {
@@ -229,6 +227,22 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
+function map_exit_btn_click() {
+    map_overlay.style.display = "none";
+    action_btn_el.style.display = "block";
+    setState("map", false);
+}
+
+function map_btn_click() {
+    setState("map", true);
+    openMap();
+}
+
+function openMap() {
+    map_overlay.style.display = "block";
+    action_btn_el.style.display = "none";
+}
+
 window.onload = function() {
     // Load JSON
     data = getAllData();
@@ -238,10 +252,13 @@ window.onload = function() {
         tour_id = "cbdi_inpatient_tour";
     }
 
+
     loadAssets();
 
     sky           = document.getElementById("image-360");
-
+    map_overlay   = document.getElementById("map-overlay");
+    map_exit_btn  = document.getElementById("map_exit");
+    map_exit_btn.addEventListener("click", map_exit_btn_click);
     // UI Elements
     robbie        = document.getElementById("robbie");
     nav_bar       = document.getElementById("nav_bar");
@@ -295,17 +312,17 @@ window.onload = function() {
     nav_panel.open_old = nav_panel.open;
     nav_panel.open = function() {
         setState("captions", false);
-        refreshCaption();
         nav_panel.open_old.call(this);
     }
     nav_panel.close_old = nav_panel.close;
     nav_panel.close = function() {
         setState("captions", true);
-        refreshCaption();
         nav_panel.close_old.call(this);
     }
+
     action_btn.open();
     nav_panel.open();
+
     // Bug fix: nav_panel must be closed when window is resized
     function resizeHandler() {
         nav_panel.close();
