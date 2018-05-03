@@ -377,8 +377,8 @@ function getAllData() {
     "campus_info": {
       "name": "Children's Campus Info",
       "rotation": {
-        "x": -1.719,
-        "y": -844.196,
+        "x": -1.604,
+        "y": -935.411,
         "z": 0
       },
       "transcript": ""
@@ -566,8 +566,8 @@ function getAllData() {
     "outpatient_entrance": {
       "name": "CBDI Outpatient Entrance",
       "rotation": {
-        "x": -1.719,
-        "y": -844.196,
+        "x": 0.458,
+        "y": -898.169,
         "z": 0
       },
       "transcript": "This is the Outpatient Triage Desk. "
@@ -575,8 +575,8 @@ function getAllData() {
     "outpatient_nurses_station": {
       "name": "Outpatient Nurses Station",
       "rotation": {
-        "x": -1.719,
-        "y": -844.196,
+        "x": -0.229,
+        "y": -944.807,
         "z": 0
       },
       "transcript": "The nurses station is centrilized so that the nurses can easliy monitor all of the rooms."
@@ -584,8 +584,8 @@ function getAllData() {
     "outpatient_nutrition": {
       "name": "Outpatient Nutrition Room",
       "rotation": {
-        "x": -1.719,
-        "y": -844.196,
+        "x": 1.260,
+        "y": -1096.297,
         "z": 0
       },
       "transcript": "This is the nutrition room.  Snacks from here are available upon request."
@@ -593,8 +593,8 @@ function getAllData() {
     "outpatient_room_bed": {
       "name": "Outpatient Room 1",
       "rotation": {
-        "x": -1.719,
-        "y": -844.196,
+        "x": -1.031,
+        "y": -1013.792,
         "z": 0
       },
       "transcript": "The rooms are equiped with Telemedicine, which allows patients to video call their doctor in other buildings or on main campus."
@@ -602,8 +602,8 @@ function getAllData() {
     "outpatient_room_chair": {
       "name": "Outpatient Room 2",
       "rotation": {
-        "x": -1.719,
-        "y": -844.196,
+        "x": -11.001,
+        "y": -1149.583,
         "z": 0
       },
       "transcript": "The rooms are equiped with the Get Well Network on TV.  This will greet patients as they enter the room and has access to multiple streaming options."
@@ -611,8 +611,8 @@ function getAllData() {
     "outpatient_triage_desk": {
       "name": "Outpatient Triage Desk",
       "rotation": {
-        "x": -1.719,
-        "y": -844.196,
+        "x": 0.144,
+        "y": -801.568,
         "z": 0
       },
       "transcript": "When a patient first arrives at the outpatient center, his or her vitals are checked here."
