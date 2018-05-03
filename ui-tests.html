@@ -12,10 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
-    <a-scene manager vr-mode-ui="enabled: false" cursor="rayOrigin: mouse">
+    <a-scene vr-mode-ui="enabled: false" cursor="rayOrigin: mouse">
         <a-sky id="image-360" radius="105"></a-sky>
         <a-entity id="player" position="0 2 0" rotation="0 0 0">
-            <a-entity id="mainCamera" camera look-controls mouse-cursor wasd-controls></a-entity>
+            <a-entity id="mainCamera" camera look-controls="reverseMouseDrag: true" mouse-cursor></a-entity>
         </a-entity>
     </a-scene>
     <div class="fixed-action-btn">

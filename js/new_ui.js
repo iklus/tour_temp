@@ -22,6 +22,7 @@ let next_icon;
 // Declare states
 let states = {
     "sound": true,
+    "playingAudio": false,
     "captions": true,
     "map": false
 }
@@ -81,7 +82,14 @@ function setState(mode, state) {
 }
 
 function vr_btn_click() {
-    // Do what we need to enable VR
+    var scene = document.querySelector('a-scene');
+    if (scene) {
+        if (scene.hasLoaded) {
+            scene.enterVR();
+        } else {
+            scene.addEventListener('loaded', scene.enterVR);
+        }
+    }
 }
 
 function captions_btn_click() {
@@ -91,6 +99,7 @@ function captions_btn_click() {
 
 function sound_btn_click() {
     setState("sound", !states.sound);
+    refreshAudio();
 }
 
 function map_btn_click() {
@@ -99,8 +108,9 @@ function map_btn_click() {
 
 function nav_panel_click() {
     current_location_index = this.dataset.location;
-    refreshNavPanel();
-    setupImage();
+    setState("captions", !states.captions);
+    refreshCaption();
+    change_location();
 }
 
 function populateNavPanel() {
@@ -120,8 +130,7 @@ function populateNavPanel() {
         dropdown_content.appendChild(li_divider);
         i++;
     });
-    refreshNavPanel();
-    setupImage();
+    change_location();
 }
 
 function nav_btn_click() {
@@ -138,8 +147,13 @@ function nav_btn_click() {
     }
 
     console.log(current_location_index);
-    refreshNavPanel();
+    change_location();
+}
+
+function change_location() {
     setupImage();
+    refreshNavPanel();
+    refreshAudio();
 }
 
 function action_btn_click() {
@@ -149,7 +163,7 @@ function action_btn_click() {
 
 function setupImage() {
     let location = data.tours[tour_id].locations[current_location_index];
-    sky.setAttribute("material", "src", "#" + location);
+    sky.setAttribute("material", "src", "#" + location + "360");
     let rotation = data.locations[location].rotation;
     document.getElementById('mainCamera').setAttribute(
         'rotation',
@@ -169,6 +183,18 @@ function refreshCaption() {
     }
 }
 
+function refreshAudio() {
+    let location = data.tours[tour_id].locations[current_location_index];
+    var sounds = document.getElementsByTagName("audio");
+    for(i=0; i<sounds.length; i++) {
+        sounds[i].pause();
+        sounds[i].currentTime = 0;
+    }
+    if (states.sound) {
+        setTimeout(function(){document.getElementById(location + "Audio").play();}, 000);
+    }
+}
+
 function assetsLoaded() {
     document.querySelector(".overlay").style.display = "none";
     setupImage();
@@ -181,10 +207,14 @@ function loadAssets() {
     let assets = document.createElement("a-assets");
     assets.addEventListener("loaded", assetsLoaded);
     data.tours[tour_id].locations.forEach(function(location) {
-        let asset = document.createElement("img");
-        asset.id = location;
-        asset.src = "images/360/" + location + ".jpg";
-        assets.appendChild(asset);
+        let imgAsset = document.createElement("img");
+        imgAsset.id = location + "360";
+        imgAsset.src = "images/360/" + location + ".jpg";
+        assets.appendChild(imgAsset);
+        let audioAsset = document.createElement("audio");
+        audioAsset.id = location + "Audio";
+        audioAsset.src = "audio/" + location + ".mp3";
+        assets.appendChild(audioAsset);
     });
     scene.appendChild(assets);
 }
@@ -262,6 +292,18 @@ window.onload = function() {
         this.dropdownEl.style.width = positionInfo.width + 'px';
         this.dropdownEl.style.transformOrigin = (positionInfo.horizontalAlignment === 'left' ? '50%' : '100%') + " " + (positionInfo.verticalAlignment === 'top' ? '0' : '100%');
     };
+    nav_panel.open_old = nav_panel.open;
+    nav_panel.open = function() {
+        setState("captions", false);
+        refreshCaption();
+        nav_panel.open_old.call(this);
+    }
+    nav_panel.close_old = nav_panel.close;
+    nav_panel.close = function() {
+        setState("captions", true);
+        refreshCaption();
+        nav_panel.close_old.call(this);
+    }
     action_btn.open();
     nav_panel.open();
     // Bug fix: nav_panel must be closed when window is resized
