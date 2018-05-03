@@ -102,6 +102,10 @@ function captions_btn_click() {
 
 function sound_btn_click() {
     setState("sound", !states.sound);
+(??)}
+(??)
+(??)function map_btn_click() {
+(??)    setState("map", true);
 }
 
 function nav_panel_click() {
@@ -130,15 +134,15 @@ function populateNavPanel() {
     change_location();
 }
 
-function nav_btn_click() {
-    if(this == next_btn && current_location_index == data.tours[tour_id].locations.length - 1) {
+function nav_btn_click(direction) {
+    if(direction == "next" && current_location_index == data.tours[tour_id].locations.length - 1) {
         // Handle more button
         window.location.href = "/#tours";
     }
-    if(this == previous_btn && current_location_index > 0) {
+    if(direction == "previous" && current_location_index > 0) {
         current_location_index--;
     }
-    if(this == next_btn && current_location_index < data.tours[tour_id].locations.length - 1) {
+    if(direction == "next" && current_location_index < data.tours[tour_id].locations.length - 1) {
         current_location_index++;
         this.className = "btn-floating btn-large custom-float-btn";
     }
@@ -187,9 +191,8 @@ function refreshAudio() {
         sounds[i].pause();
         sounds[i].currentTime = 0;
     }
-    console.log(states.sound);
-    if(states.sound && !states.map) {
-        setTimeout(function(){document.getElementById(location + "Audio").play();}, 500);
+    if (states.sound && !states.map) {
+        document.getElementById(location + "Audio").play();
     }
 }
 
@@ -227,6 +230,12 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
+function onPageExit() {
+    console.log("exit");
+    setState("captions", false);
+    refreshCaption();
+}
+
 function map_exit_btn_click() {
     map_overlay.style.display = "none";
     action_btn_el.style.display = "block";
@@ -252,7 +261,6 @@ window.onload = function() {
         tour_id = "cbdi_inpatient_tour";
     }
 
-
     loadAssets();
 
     sky           = document.getElementById("image-360");
@@ -265,8 +273,8 @@ window.onload = function() {
     previous_btn  = document.getElementById("previous_btn");
     next_btn      = document.getElementById("next_btn");
     next_icon     = document.getElementById("next_icon");
-    previous_btn.addEventListener("click", nav_btn_click);
-    next_btn.addEventListener("click", nav_btn_click);
+    previous_btn.addEventListener("click", function(){nav_btn_click("previous");});
+    next_btn.addEventListener("click", function(){nav_btn_click("next");});
 
     vr_btn        = document.getElementById("vr_btn");
     vr_btn.addEventListener("click", vr_btn_click);
@@ -292,6 +300,25 @@ window.onload = function() {
         direction: "bottom",
         hoverEnabled: false
     });
+
+    // Setup Arrow Key Support
+    document.onkeydown = function(event) {
+        switch (event.keyCode) {
+            case 37:
+                nav_btn_click("previous");
+                break;
+            case 39:
+                nav_btn_click("next");
+                break;
+        }
+    };
+
+    // Called when page is no longer visible
+    document.addEventListener("visibilitychange", function() {
+        if (document.hidden) {
+            setState("sound", false);
+        }
+      });
 
     // Setup navigation panel
     const dropdown_el = document.querySelector(".dropdown-trigger");
