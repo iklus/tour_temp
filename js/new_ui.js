@@ -428,8 +428,8 @@ window.onload = function() {
         document.querySelector(".overlay").style.display = "none";
         setState("sound", true);
         change_location();
-        setTimeout(function(){action_btn.close();}, 1500);
-        setTimeout(function(){nav_panel.close();}, 2000);
+        setTimeout(function(){action_btn.close();}, 3000);
+        setTimeout(function(){nav_panel.close();}, 4000);
     });
 
     refreshButtons();
