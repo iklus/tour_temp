@@ -7,7 +7,7 @@ html {
 body {
   background-color: #FFFFFF;
   height: 100%;
-  font-family: 'Proxima Nova', 'Khula', Arial, sans-serif;
+  font-family: 'Proxima Nova', 'Khula', Arial, sans-serif !important;
 }
 
 ::-webkit-scrollbar { 
@@ -19,7 +19,7 @@ body {
 nav {
   background-color: #FFFFFF;
   color: #565A5C;
-  font-family: 'Proxima Nova', 'Khula', Arial, sans-serif;
+  font-family: 'Proxima Nova', 'Khula', Arial, sans-serif !important;
 }
 
 .nav-menu {
@@ -139,7 +139,7 @@ nav {
 .card:hover {
   text-decoration:none;
   color: #565A5C;
-  transform: scale(1.1, 1.1);
+  transform: scale(1.02, 1.02);
 }
 
 
@@ -155,7 +155,7 @@ nav {
     font-size:24px;
   }
 
-  .pill {
+  .green-pill {
     font-size: 18px;
     padding:0 20px;
 	  line-height:50px;
