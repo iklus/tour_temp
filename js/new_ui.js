@@ -268,7 +268,7 @@ function addSpot(x, y, r, location) {
     div.style.webkitBorderRadius = r + "px";
     div.style.top = (y - r) + "px";
     div.style.left = (x - r) + "px";
-    div.style.borderWidth = Math.floor(r/2) + "px";
+    div.style.borderWidth = Math.floor(r/3) + "px";
     div.style.backgroundColor = (data.tours[tour_id].locations[current_location_index] == location) ? "#73b420" : "transparent";
     div.dataset.location = data.tours[tour_id].locations.indexOf(location);
     div.addEventListener("click", spot_click);
