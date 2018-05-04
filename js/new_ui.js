@@ -1,3 +1,4 @@
+let a_scene;
 let sky;
 let map_overlay;
 let map_area;
@@ -430,10 +431,12 @@ window.onload = function() {
         }
       });
 
-    sky.addEventListener("click", function() {
-        action_btn.close();
+    a_scene = document.querySelector("a-scene");
+    console.log(a_scene);
+    a_scene.addEventListener("click", function() {
+       action_btn.close();
     });
-    sky.addEventListener("touch", function() {
+    a_scene.addEventListener("touchstart", function() {
         action_btn.close();
     });
 
@@ -465,8 +468,9 @@ window.onload = function() {
         nav_panel.close_old.call(this);
     }
 
-    action_btn.open();
     nav_panel.open();
+    action_btn.open();
+
 
     // Bug fix: nav_panel must be closed when window is resized
     function resizeHandler() {
