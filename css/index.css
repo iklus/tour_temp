@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  color: white;
+  background-color: #00AAC8;
   height: 100%;
   font-family: 'Proxima Nova', 'Khula', Arial, sans-serif;
 }
@@ -40,11 +40,18 @@ nav {
   color: #00AAC8;
 }
 
+/* Jumbotron */
 .jumbotron {
-  background: url("campus_carousel.JPG") no-repeat center center; 
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("../images/landing/background_image.png") no-repeat center center; 
   background-size: cover;
+  margin-bottom: 0px !important;
   position: relative;
-  min-height: 90%;
+  min-height: 100%;
 }
 
 
@@ -61,26 +68,46 @@ nav {
   text-align: center;
 }
 
-.jumbo-bottom {
-  position: absolute;
-  left: 50%;
-  bottom: 5%;
+.jumbo-link:hover {
+  text-decoration: none;
 }
 
-.jumbo-bottom-text {
+.title-sm{
+  font-size:18px;
+}
+
+.title-lg{
+  font-size:40px;
+}
+
+.button-row{
   position: relative;
   left: -50%;
   color:#FFFFFF;
   text-align: center;
+  margin-top:40px;
 }
 
-.jumbo-bottom-text:hover {
-  color: #00AAC8;
-  text-decoration: none;
+.pill{
+	text-decoration:none;
+	color:#FFFFFF;
+	font-size:24px;
+	font-weight:bold;
+	padding:0 30px;
+	line-height:64px;
+  height: auto;
+  display: inline-block;
+  text-align: center;
+  background-color:#73b420;
+  -webkit-border-radius: 32px;
+  -moz-border-radius: 32px;
+  border-radius: 32px;
 }
 
-.jumbo-link:hover {
-  text-decoration: none;
+.pill:hover{
+  color:#FFFFFF;
+  background-color:#00AAC8;
+  text-decoration:none;
 }
 
 
@@ -90,14 +117,9 @@ nav {
   text-decoration: none;
 }
 
-.card {
-  min-height: 346px;
-}
-
 
 .card:hover {
-  color: #FFFFFF;
-  background-color: #00AAC8;
+  color: #565A5C;
   transform: scale(1.1, 1.1);
 }
 
@@ -105,21 +127,24 @@ nav {
 
 
 /* RESPONSIVE CSS */
-@media (min-width: 40em) {
+@media (max-width: 576px) {
+  .title-sm{
+    font-size:12px;
+  }
+  
+  .title-lg{
+    font-size:24px;
+  }
 
-}
-
-@media (min-width: 62em) {
-  .featurette-heading {
-    margin-top: 7rem;
+  .pill {
+    font-size: 18px;
+    padding:0 20px;
+	  line-height:50px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
   }
 }
-
-
-
-
-
-
 
 
 

@@ -24,7 +24,6 @@ let next_icon;
 // Declare states
 let states = {
     "sound": true,
-    "playingAudio": false,
     "captions": true,
     "map": false
 }
@@ -151,6 +150,18 @@ function change_location() {
     setupImage();
     refreshNavPanel();
     refreshAudio();
+
+    // Send location to Google Analytics using gtag.js and global gtag function
+    let location = data.tours[tour_id].locations[current_location_index];
+    gtag('event', 'location_change', {
+        'send_to': ['UA-108453755-2'],
+        'tour_name': tour_id,
+        'location_name': location,
+        'event_label': location,
+        'event_callback': function() {
+        console.log('gtag worked! Tour: ' + tour_id + ' Location: ' + location);
+        }
+    });
 }
 
 function action_btn_click() {
@@ -162,7 +173,7 @@ function setupImage() {
     let location = data.tours[tour_id].locations[current_location_index];
     sky.setAttribute("material", "src", "#" + location + "360");
     let rotation = data.locations[location].rotation;
-    document.getElementById('mainCamera').setAttribute(
+    document.getElementById('player').setAttribute(
         'rotation',
         rotation.x + " " + rotation.y + " " + rotation.z
     );
@@ -191,7 +202,7 @@ function refreshAudio() {
         sounds[i].pause();
         sounds[i].currentTime = 0;
     }
-    if (states.sound && !states.map) {
+    if (states.sound && !states.map && data.locations[location].transcript != "") {
         document.getElementById(location + "Audio").play();
     }
 }
@@ -212,10 +223,12 @@ function loadAssets() {
         imgAsset.id = location + "360";
         imgAsset.src = "images/360/" + location + ".jpg";
         assets.appendChild(imgAsset);
-        let audioAsset = document.createElement("audio");
+        if (data.locations[location].transcript != ""){
+            let audioAsset = document.createElement("audio");
         audioAsset.id = location + "Audio";
         audioAsset.src = "audio/" + location + ".mp3";
         assets.appendChild(audioAsset);
+        }
     });
     scene.appendChild(assets);
 }
