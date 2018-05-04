@@ -171,7 +171,7 @@ function setupImage() {
     let location = data.tours[tour_id].locations[current_location_index];
     sky.setAttribute("material", "src", "#" + location + "360");
     let rotation = data.locations[location].rotation;
-    document.getElementById('mainCamera').setAttribute(
+    document.getElementById('player').setAttribute(
         'rotation',
         rotation.x + " " + rotation.y + " " + rotation.z
     );
