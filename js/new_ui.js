@@ -79,9 +79,6 @@ function setState(mode, state) {
 }
 
 function vr_btn_click() {
-    nav_panel.style.display = "none";
-    captions_text.style.display = "none";
-    action_btn_el.style.display = "none";
     var scene = document.querySelector('a-scene');
     if (scene) {
         if (scene.hasLoaded) {
@@ -136,13 +133,13 @@ function nav_btn_click(direction) {
     }
     if(direction == "previous" && current_location_index > 0) {
         current_location_index--;
+        change_location();
     }
     if(direction == "next" && current_location_index < data.tours[tour_id].locations.length - 1) {
         current_location_index++;
         next_btn.className = "btn-floating btn-large custom-float-btn";
+        change_location();
     }
-
-    change_location();
 }
 
 function change_location() {
@@ -173,7 +170,7 @@ function setupImage() {
     let location = data.tours[tour_id].locations[current_location_index];
     sky.setAttribute("material", "src", "#" + location + "360");
     let rotation = data.locations[location].rotation;
-    document.getElementById('player').setAttribute(
+    document.getElementById('mainCamera').setAttribute(
         'rotation',
         rotation.x + " " + rotation.y + " " + rotation.z
     );
@@ -430,7 +427,7 @@ window.onload = function() {
         setState("sound", true);
         change_location();
         setTimeout(function(){action_btn.close();}, 1500);
-        setTimeout(function(){nav_panel.close();}, 1500);
+        setTimeout(function(){nav_panel.close();}, 2000);
     });
 
     refreshButtons();
