@@ -237,12 +237,19 @@
 
 #map-title {
     height: 24pt;
-    font-size: 24pt;
+    font-size: 20pt;
     color: #73b420;
     font-family: 'proxima_nova_altbold' !important;
     display: table-row;
     width: 100%;
 }
+
+@media only screen and (min-width: 500px) {
+    #map-title {
+        font-size: 24pt;
+    }
+}
+
 #map-title-text {
     display: inline-block;
 }
