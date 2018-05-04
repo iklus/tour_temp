@@ -79,6 +79,9 @@ function setState(mode, state) {
 }
 
 function vr_btn_click() {
+    nav_panel.style.display = "none";
+    captions_text.style.display = "none";
+    action_btn_el.style.display = "none";
     var scene = document.querySelector('a-scene');
     if (scene) {
         if (scene.hasLoaded) {
