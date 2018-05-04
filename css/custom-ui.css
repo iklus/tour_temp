@@ -378,7 +378,7 @@
     }
 }
 
-#more-area a {
+.green-pill {
     height: 48px;
     line-height: 48px;
     border-radius: 24px;
@@ -394,4 +394,8 @@
     margin: 10px auto;
     cursor: pointer;
     font-family: 'proxima_nova_altbold' !important;
+}
+
+#enter_tour_btn {
+    visibility: hidden;
 }
