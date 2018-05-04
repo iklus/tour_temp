@@ -276,3 +276,7 @@
     border-color: #565A56;
     border-width: 1px;
 }
+
+.fixed-action-btn {
+    height: 48px;
+}

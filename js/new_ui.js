@@ -118,6 +118,7 @@ function populateNavPanel() {
 }
 
 function nav_btn_click(direction) {
+    action_btn.close();
     if(direction == "next" && current_location_index == data.tours[tour_id].locations.length - 1) {
         // Handle more button
         window.location.href = "/tour_temp/#tours";
@@ -429,6 +430,10 @@ window.onload = function() {
         }
       });
 
+    sky.addEventListener("click", function() {
+        action_btn.close();
+    });
+
     // Setup navigation panel
     const dropdown_el = document.querySelector(".dropdown-trigger");
     nav_panel = M.Dropdown.init(dropdown_el, {coverTrigger: false});
@@ -447,6 +452,7 @@ window.onload = function() {
     };
     nav_panel.open_old = nav_panel.open;
     nav_panel.open = function() {
+        action_btn.close();
         setState("captions", false);
         nav_panel.open_old.call(this);
     }
