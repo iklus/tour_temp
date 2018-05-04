@@ -99,7 +99,7 @@
     padding: 5px 10px;
     position: fixed;
     background: white;
-    font-family: 'Proxima Nova', 'Khula', Arial, sans-serif;;
+    font-family: 'Proxima Nova', 'Khula', Arial, sans-serif;
     font-size: 8pt;
     line-height: 10pt;
     border-radius: 10px;
@@ -112,13 +112,13 @@
     height: 12px;
 }
     
-  ::-webkit-scrollbar-track {
-    border: 1px solid var(--scrollbar-color);
+::-webkit-scrollbar-track {
+    border: 1px solid rgba(202,86,153,1);
     border-radius: 10px;
 }
     
-  ::-webkit-scrollbar-thumb {
-    background: var(--scrollbar-color);  
+::-webkit-scrollbar-thumb {
+    background: rgba(202,86,153,1);  
     border-radius: 10px;
 }
 
@@ -378,7 +378,7 @@
     }
 }
 
-.green-pill {
+#more-area a {
     height: 48px;
     line-height: 48px;
     border-radius: 24px;
@@ -394,8 +394,4 @@
     margin: 10px auto;
     cursor: pointer;
     font-family: 'proxima_nova_altbold' !important;
-}
-
-#enter_tour_btn {
-    visibility: hidden;
 }
