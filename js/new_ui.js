@@ -121,7 +121,7 @@ function populateNavPanel() {
 function nav_btn_click(direction) {
     if(direction == "next" && current_location_index == data.tours[tour_id].locations.length - 1) {
         // Handle more button
-        window.location.href = "/#tours";
+        window.location.href = "/tour_temp/#tours";
     }
     if(direction == "previous" && current_location_index > 0) {
         current_location_index--;
