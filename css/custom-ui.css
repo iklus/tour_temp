@@ -136,64 +136,6 @@
     display: block;
 }
 
-#map-overlay {
-    position:fixed;
-    top:0;
-    left:0;
-    background:rgba(255,255,255,0.9);
-    z-index:1000;
-    width:100%;
-    height: 100%;
-    font-family: 'Proxima Nova' !important;
-    display: none;
-}
-#map-div {
-    margin: auto;
-    width: 100%;
-    height: calc(100% - 68px);
-    display: table;
-    padding: 10px 10px 0 10px;
-}
-@media only screen and (min-width: 500px) {
-    #map-div {
-        width: 500px;
-    }
-}
-
-#map-title {
-    height: 24pt;
-    font-size: 24pt;
-    color: #73b420;
-    font-family: 'proxima_nova_altbold' !important;
-    display: table-row;
-    width: 100%;
-}
-#map-title-text {
-    display: inline-block;
-}
-
-#map_exit {
-    width: 48px;
-    height: 48px;
-    display: block;
-    float: right;
-    cursor: pointer;
-}
-
-#map-area {
-    width: 100%;
-    background: lightgrey;
-    position: relative;
-    display: table-row;
-}
-
-#stupidPadding {
-    height: 68px;
-    background: hotpink;
-    width: 100%;
-    display: table-row;
-}
-
 #loading-slide {
     width: 250px;
     margin: auto;
@@ -271,4 +213,66 @@
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
     }
+}
+
+#map-overlay {
+    position:fixed;
+    top:0;
+    left:0;
+    background:rgba(255,255,255,0.9);
+    z-index:1000;
+    width:100%;
+    height: 100%;
+    font-family: 'Proxima Nova' !important;
+    visibility: hidden;
+}
+#map-div {
+    margin: auto;
+    width: 100%;
+    height: calc(100% - 68px);
+    display: table;
+    padding: 10px 10px 0 10px;
+    overflow: hidden;
+}
+
+#map-title {
+    height: 24pt;
+    font-size: 24pt;
+    color: #73b420;
+    font-family: 'proxima_nova_altbold' !important;
+    display: table-row;
+    width: 100%;
+}
+#map-title-text {
+    display: inline-block;
+}
+
+#map_exit {
+    width: 48px;
+    height: 48px;
+    display: block;
+    float: right;
+    cursor: pointer;
+}
+
+#map-area {
+    width: 100%;
+    position: relative;
+    display: table-row;
+}
+
+
+#map-img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.map-location {
+    position: absolute;
+    cursor: pointer;
+    background: #73b420;
+    border-style: solid;
+    border-color: #73b420;
+    border-width: 1px;
 }

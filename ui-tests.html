@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>UI Tests</title>
+    <title>Virtual Tour</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="css/custom-ui.css">
@@ -34,7 +34,7 @@
             <li><a id="sound_btn" class="btn-floating btn-large white"><img id="sound_icon" src="images/ui/menu-sound-on.svg" width=48 height=48></a></li>
             <li><a id="captions_btn" class="btn-floating btn-large white"><img id="captions_icon" src="images/ui/menu-captions-on.svg" width=48 height=48></a></li>
             <li><a id="vr_btn" class="btn-floating btn-large white"><img src="images/ui/menu-vr.svg" width=48 height=48></a></li>
-            <li><a id="home_btn" class="btn-floating btn-large white" href="/#tours"><img src="images/ui/menu-home.svg" width=48 height=48></a></li>
+            <li><a id="home_btn" class="btn-floating btn-large white" href="/tour_temp/#tours"><img src="images/ui/menu-home.svg" width=48 height=48></a></li>
         </ul>
     </div>
     <div class="pinned-footer">
@@ -56,8 +56,11 @@
                 <div id="map-title-text">Test Map Title</div>
                 <a id="map_exit"><img width=48 height=48 src="images/ui/menu-exit.svg"></a>
             </div>
-            <div id="map-area">1</div>
+            <div id="map-area">
+                <img id="map-img">
+            </div>
         </div>
+        <div class="map-location"></div>
     </div>
     <div class="overlay">
         <div class="vertical-center center-align">
