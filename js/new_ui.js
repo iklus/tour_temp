@@ -1,5 +1,8 @@
 let sky;
 let map_overlay;
+let map_area;
+let map_img;
+let map_title_text;
 // Declare action bar UI elements
 let action_btn_el;
 let robbie;
@@ -29,25 +32,10 @@ let states = {
     "map": false
 }
 
+let current_map_id;
 let current_location_index = 0;
 let data;
 let tour_id;
-
-function showNavButton(button, state = false, pulse = false) {
-    if(state) {
-        // Show
-        button.style.display = "inline-block";
-        if(pulse) {
-            button.classList.add("pulse");
-        } else {
-            button.classList.remove("pulse");
-        }
-    } else {
-        // Hide
-        button.style.display = "none";
-        button.classList.remove("pulse");
-    }
-}
 
 function refreshButtons() {
     captions_icon.src = states.captions ? "images/ui/menu-captions-on.svg" : "images/ui/menu-captions-off.svg";
@@ -140,16 +128,16 @@ function nav_btn_click(direction) {
     }
     if(direction == "next" && current_location_index < data.tours[tour_id].locations.length - 1) {
         current_location_index++;
-        this.className = "btn-floating btn-large custom-float-btn";
+        next_btn.className = "btn-floating btn-large custom-float-btn";
     }
 
-    console.log(current_location_index);
     change_location();
 }
 
 function change_location() {
     setupImage();
     refreshNavPanel();
+    refreshMap();
     refreshAudio();
 }
 
@@ -198,7 +186,7 @@ function refreshAudio() {
 
 function assetsLoaded() {
     document.querySelector(".overlay").style.display = "none";
-    setupImage();
+    change_location();
     setTimeout(function(){action_btn.close();}, 1500);
     setTimeout(function(){nav_panel.close();}, 1500);
 }
@@ -217,6 +205,12 @@ function loadAssets() {
         audioAsset.src = "audio/" + location + ".mp3";
         assets.appendChild(audioAsset);
     });
+    Object.keys(data.maps).forEach(function(map_id) {
+        let imgAsset = document.createElement("img");
+        imgAsset.id = map_id + "-map";
+        imgAsset.src = "images/maps/" + map_id + ".png";
+        assets.appendChild(imgAsset);
+    });
     scene.appendChild(assets);
 }
 
@@ -231,7 +225,7 @@ function getParameterByName(name, url) {
 }
 
 function map_exit_btn_click() {
-    map_overlay.style.display = "none";
+    map_overlay.style.visibility = "hidden";
     action_btn_el.style.display = "block";
     setState("map", false);
 }
@@ -242,8 +236,101 @@ function map_btn_click() {
 }
 
 function openMap() {
-    map_overlay.style.display = "block";
+    refreshMap();
+    map_overlay.style.visibility = "visible";
     action_btn_el.style.display = "none";
+}
+
+function spot_click() {
+    current_location_index = this.dataset.location;
+    change_location();
+}
+
+function addSpot(x, y, r, location) {
+    let div = document.createElement("div");
+    div.className = "map-location";
+    div.style.height = (r * 2) + "px";
+    div.style.width = (r * 2) + "px";
+    div.style.borderRadius = r + "px";
+    div.style.webkitBorderRadius = r + "px";
+    div.style.top = (y - r) + "px";
+    div.style.left = (x - r) + "px";
+    div.style.borderWidth = Math.floor(r/2) + "px";
+    div.style.backgroundColor = (data.tours[tour_id].locations[current_location_index] == location) ? "#73b420" : "transparent";
+    div.dataset.location = data.tours[tour_id].locations.indexOf(location);
+    div.addEventListener("click", spot_click);
+    map_overlay.appendChild(div);
+}
+
+function refreshSpots() {
+    removeSpots();
+    placeSpots();
+}
+
+function removeSpots() {
+    let spots = document.querySelectorAll(".map-location");
+    spots.forEach(function(spot) {
+       spot.remove();
+    });
+}
+
+function placeSpots() {
+    Object.keys(data.maps[current_map_id].locations).forEach(function(location_id) {
+        let location = data.maps[current_map_id].locations[location_id];
+        if(data.tours[tour_id].locations.includes(location_id)) {
+            placeSpot(location.x, location.y, location_id);
+        }
+    });
+}
+
+function findMap() {
+    let location_id = data.tours[tour_id].locations[current_location_index];
+    let found_map_id;
+    Object.keys(data.maps).forEach(function(map_id) {
+        if(found_map_id) return;
+        if(Object.keys(data.maps[map_id].locations).includes(location_id)) {
+            found_map_id = map_id;
+            return;
+        }
+    });
+    current_map_id = found_map_id;
+}
+
+function refreshMap() {
+    findMap();
+    if(current_map_id === undefined) {
+        map_img.src = "";
+    } else {
+        map_title_text.innerText = data.maps[current_map_id].name;
+        map_img.src = "images/maps/" + current_map_id + ".png";
+        refreshSpots();
+    }
+}
+
+function placeSpot(x, y, location) {
+    // Input x and y are percents of image, all else in px
+    let scaleFactor = 40;
+    let rendered_x;
+    let rendered_y;
+    if( (map_img.naturalWidth/map_img.naturalHeight) >
+        (map_area.clientWidth/map_area.clientHeight)
+    ) {
+        // Width constrained
+        rendered_x = map_area.clientWidth;
+        // Height has padding
+        rendered_y = (map_img.naturalHeight/map_img.naturalWidth) * map_area.clientWidth;
+    } else {
+        // Width has padding
+        rendered_x = (map_img.naturalWidth/map_img.naturalHeight) * map_area.clientHeight;
+
+        // Width has padding
+        rendered_y = map_area.clientHeight;
+    }
+
+    let offsetLeft = (map_area.clientWidth  - rendered_x)/2 + map_area.offsetLeft + (x * rendered_x);
+    let offsetTop  = (map_area.clientHeight - rendered_y)/2 + map_area.offsetTop  + (y * rendered_y);
+
+    addSpot(offsetLeft, offsetTop, Math.floor(Math.max(rendered_x, rendered_y) / scaleFactor), location);
 }
 
 window.onload = function() {
@@ -261,6 +348,9 @@ window.onload = function() {
     map_overlay   = document.getElementById("map-overlay");
     map_exit_btn  = document.getElementById("map_exit");
     map_exit_btn.addEventListener("click", map_exit_btn_click);
+    map_img = document.getElementById("map-img");
+    map_area = document.getElementById("map-area");
+    map_title_text = document.getElementById("map-title-text");
     // UI Elements
     robbie        = document.getElementById("robbie");
     nav_bar       = document.getElementById("nav_bar");
@@ -303,6 +393,16 @@ window.onload = function() {
                 break;
             case 39:
                 nav_btn_click("next");
+                break;
+            case 77:
+                if(states.map) {
+                    map_exit_btn_click();
+                } else {
+                    map_btn_click();
+                }
+                break;
+            case 27:
+                if(states.map) map_exit_btn_click();
                 break;
         }
     };
@@ -347,7 +447,9 @@ window.onload = function() {
 
     // Bug fix: nav_panel must be closed when window is resized
     function resizeHandler() {
+        refreshMap();
         nav_panel.close();
     }
     window.addEventListener("resize", resizeHandler);
+
 };
