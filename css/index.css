@@ -91,11 +91,12 @@ nav {
 .pill{
 	text-decoration:none;
 	color:#FFFFFF;
-	font-size:24px;
+	font-size:18px;
 	padding:0 30px;
 	line-height:64px;
   height: auto;
   display: inline-block;
+  font-family: 'proxima_nova_altbold' !important;
   text-align: center;
   background-color:#73b420;
   -webkit-border-radius: 32px;
@@ -104,8 +105,8 @@ nav {
 }
 
 .pill:hover{
-  color:#FFFFFF;
-  background-color:#00AAC8;
+  color:#73b420;
+  background-color:#FFFFFF;
   text-decoration:none;
 }
 
