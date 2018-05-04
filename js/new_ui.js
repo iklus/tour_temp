@@ -20,6 +20,7 @@ let sound_btn;
 let map_btn;
 let captions_text;
 let map_exit_btn;
+let top_help;
 
 let captions_icon;
 let sound_icon;
@@ -422,6 +423,7 @@ window.onload = function() {
     tour_name     = document.getElementById("tour_name");
     replay_btn    = document.getElementById("replay_btn")
     replay_btn.addEventListener("click", replay_btn_click);
+    top_help      = document.getElementById("top-help");
 
     loader         = document.querySelector(".loader");
     enter_tour_btn = document.getElementById("enter_tour_btn");
@@ -477,9 +479,11 @@ window.onload = function() {
     a_scene = document.querySelector("a-scene");
     a_scene.addEventListener("click", function() {
        action_btn.close();
+        top_help.style.display = "none";
     });
     a_scene.addEventListener("touchstart", function() {
         action_btn.close();
+        top_help.style.display = "none";
     });
 
     // Setup navigation panel

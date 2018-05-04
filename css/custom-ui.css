@@ -416,3 +416,15 @@
 #enter_tour_btn {
     visibility: hidden;
 }
+
+#top-help {
+    width: 100px;
+    margin: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding-bottom: 68px;
+}
+
