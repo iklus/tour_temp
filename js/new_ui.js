@@ -433,6 +433,9 @@ window.onload = function() {
     sky.addEventListener("click", function() {
         action_btn.close();
     });
+    sky.addEventListener("touch", function() {
+        action_btn.close();
+    });
 
     // Setup navigation panel
     const dropdown_el = document.querySelector(".dropdown-trigger");
