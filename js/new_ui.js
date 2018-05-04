@@ -33,7 +33,7 @@ let next_icon;
 
 // Declare states
 let states = {
-    "sound": true,
+    "sound": false,
     "captions": true,
     "map": false
 }
@@ -427,6 +427,7 @@ window.onload = function() {
     enter_tour_btn = document.getElementById("enter_tour_btn");
     enter_tour_btn.addEventListener("click", function() {
         document.querySelector(".overlay").style.display = "none";
+        setState("sound", true);
         change_location();
         setTimeout(function(){action_btn.close();}, 1500);
         setTimeout(function(){nav_panel.close();}, 1500);
