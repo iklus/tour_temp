@@ -204,7 +204,7 @@ function refreshAudio() {
 }
 
 function assetsLoaded() {
-    document.querySelector(".overlay").style.display = "none";
+    //document.querySelector(".overlay").style.display = "none";
     change_location();
     setTimeout(function(){action_btn.close();}, 1500);
     setTimeout(function(){nav_panel.close();}, 1500);
