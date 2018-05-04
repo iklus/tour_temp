@@ -156,7 +156,7 @@ function change_location() {
         'location_name': location,
         'event_label': location,
         'event_callback': function() {
-        console.log('gtag worked! Tour: ' + tour_id + ' Location: ' + location);
+            console.log('GTAG--Tour: ' + tour_id + ' Location: ' + location);
         }
     });
 }
@@ -366,7 +366,6 @@ function replay_btn_click() {
 }
 
 function openMore() {
-    console.log("Here");
     map_exit_btn_click();
     action_btn_el.style.display = "none";
     more_overlay.style.visibility = "visible";
@@ -472,7 +471,6 @@ window.onload = function() {
       });
 
     a_scene = document.querySelector("a-scene");
-    console.log(a_scene);
     a_scene.addEventListener("click", function() {
        action_btn.close();
     });
