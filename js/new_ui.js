@@ -270,6 +270,7 @@ function addSpot(x, y, r, location) {
     div.style.left = (x - r) + "px";
     div.style.borderWidth = Math.floor(r/3) + "px";
     div.style.backgroundColor = (data.tours[tour_id].locations[current_location_index] == location) ? "#73b420" : "transparent";
+    div.style.borderColor     = (data.tours[tour_id].locations[current_location_index] == location) ? "#73b420" : "#565A56";
     div.dataset.location = data.tours[tour_id].locations.indexOf(location);
     div.addEventListener("click", spot_click);
     map_overlay.appendChild(div);
