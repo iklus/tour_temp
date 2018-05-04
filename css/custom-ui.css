@@ -287,3 +287,81 @@
 .fixed-action-btn {
     height: 48px;
 }
+
+#more-overlay {
+    position:fixed;
+    top:0;
+    left:0;
+    background:rgba(255,255,255,0.9);
+    z-index:3000;
+    width:100%;
+    height: 100%;
+    font-family: 'Proxima Nova' !important;
+    visibility: hidden;
+}
+#more-div {
+    margin: auto;
+    width: 100%;
+    height: calc(100% - 68px);
+    display: table;
+    padding: 10px 10px 0 10px;
+    overflow: hidden;
+}
+
+#more-title {
+    height: 24pt;
+    display: table-row;
+    width: 100%;
+}
+
+#more_exit {
+    width: 48px;
+    height: 48px;
+    display: block;
+    float: right;
+    cursor: pointer;
+}
+
+#more-area {
+    width: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding-bottom: 68px;
+}
+
+#more-area p {
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+    color: rgba(202,86,153,1);
+    font-family: 'proxima_nova_altbold' !important;
+    font-size: 20pt;
+
+}
+
+@media only screen and (min-width: 500px) {
+    #more-area p {
+        width: 500px;
+    }
+}
+
+#more-area a {
+    height: 48px;
+    line-height: 48px;
+    border-radius: 24px;
+    width: 250px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    color: white;
+    font-size: 18px;
+    background-color: #73b420;
+    text-transform: none;
+    text-align: center;
+    display: block;
+    margin: 10px auto;
+    cursor: pointer;
+    font-family: 'proxima_nova_altbold' !important;
+}

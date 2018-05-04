@@ -4,6 +4,11 @@ let map_overlay;
 let map_area;
 let map_img;
 let map_title_text;
+let more_overlay;
+let more_exit;
+let tour_name;
+let replay_btn;
+
 // Declare action bar UI elements
 let action_btn_el;
 let robbie;
@@ -122,7 +127,8 @@ function nav_btn_click(direction) {
     action_btn.close();
     if(direction == "next" && current_location_index == data.tours[tour_id].locations.length - 1) {
         // Handle more button
-        window.location.href = "/tour_temp/#tours";
+        next_btn.className = "btn-floating btn-large custom-float-btn";
+        openMore();
     }
     if(direction == "previous" && current_location_index > 0) {
         current_location_index--;
@@ -349,6 +355,25 @@ function placeSpot(x, y, location) {
     addSpot(offsetLeft, offsetTop, Math.floor(Math.max(rendered_x, rendered_y) / scaleFactor), location);
 }
 
+function more_exit_btn_click() {
+    more_overlay.style.visibility = "hidden";
+    action_btn_el.style.display = "block";
+}
+
+function replay_btn_click() {
+    more_exit_btn_click();
+    current_location_index = 0;
+    change_location();
+}
+
+function openMore() {
+    console.log("Here");
+    map_exit_btn_click();
+    action_btn_el.style.display = "none";
+    more_overlay.style.visibility = "visible";
+    tour_name.innerText = data.tours[tour_id].name;
+}
+
 window.onload = function() {
     // Load JSON
     data = getAllData();
@@ -389,6 +414,13 @@ window.onload = function() {
     sound_icon    = document.getElementById("sound_icon");
 
     captions_text = document.getElementById("captions_text");
+
+    more_overlay  = document.getElementById("more-overlay");
+    more_exit     = document.getElementById("more_exit");
+    more_exit.addEventListener("click", more_exit_btn_click);
+    tour_name     = document.getElementById("tour_name");
+    replay_btn    = document.getElementById("replay_btn")
+    replay_btn.addEventListener("click", replay_btn_click);
 
     refreshButtons();
     populateNavPanel();
