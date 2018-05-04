@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  background-color: #00AAC8;
+  background-color: #FFFFFF;
   height: 100%;
   font-family: 'Proxima Nova', 'Khula', Arial, sans-serif;
 }
@@ -104,7 +104,25 @@ nav {
   border-radius: 32px;
 }
 
-.pill:hover{
+.green-pill {
+  height: 48px;
+  line-height: 48px;
+  border-radius: 24px;
+  width: 250px;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  color: white;
+  font-size: 18px;
+  background-color: #73b420;
+  text-transform: none;
+  text-align: center;
+  display: block;
+  margin: 10px auto;
+  cursor: pointer;
+  font-family: 'proxima_nova_altbold' !important;
+}  
+
+.green-pill:hover{
   color:#73b420;
   background-color:#FFFFFF;
   text-decoration:none;
@@ -119,6 +137,7 @@ nav {
 
 
 .card:hover {
+  text-decoration:none;
   color: #565A5C;
   transform: scale(1.1, 1.1);
 }

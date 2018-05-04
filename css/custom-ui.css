@@ -102,6 +102,7 @@
     font-family: 'Proxima Nova', 'Khula', Arial, sans-serif;
     font-size: 8pt;
     line-height: 10pt;
+    scrollbar-base-color: #CA5699;
     border-radius: 10px;
     overflow:auto;
 }
@@ -369,6 +370,7 @@
     color: rgba(202,86,153,1);
     font-family: 'proxima_nova_altbold' !important;
     font-size: 20pt;
+    padding-bottom: 20px;
 
 }
 
@@ -394,6 +396,12 @@
     margin: 10px auto;
     cursor: pointer;
     font-family: 'proxima_nova_altbold' !important;
+}
+
+.green-pill:hover {
+    color:#73b420;
+    background-color:#FFFFFF;
+    text-decoration:none;
 }
 
 #enter_tour_btn {
