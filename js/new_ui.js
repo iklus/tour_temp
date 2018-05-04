@@ -8,7 +8,8 @@ let more_overlay;
 let more_exit;
 let tour_name;
 let replay_btn;
-
+let loader;
+let enter_tour_btn;
 // Declare action bar UI elements
 let action_btn_el;
 let robbie;
@@ -204,10 +205,8 @@ function refreshAudio() {
 }
 
 function assetsLoaded() {
-    document.querySelector(".overlay").style.display = "none";
-    change_location();
-    setTimeout(function(){action_btn.close();}, 1500);
-    setTimeout(function(){nav_panel.close();}, 1500);
+    loader.style.display = "none";
+    enter_tour_btn.style.visibility = "visible";
 }
 
 function loadAssets() {
@@ -421,6 +420,15 @@ window.onload = function() {
     tour_name     = document.getElementById("tour_name");
     replay_btn    = document.getElementById("replay_btn")
     replay_btn.addEventListener("click", replay_btn_click);
+
+    loader         = document.querySelector(".loader");
+    enter_tour_btn = document.getElementById("enter_tour_btn");
+    enter_tour_btn.addEventListener("click", function() {
+        document.querySelector(".overlay").style.display = "none";
+        change_location();
+        setTimeout(function(){action_btn.close();}, 1500);
+        setTimeout(function(){nav_panel.close();}, 1500);
+    });
 
     refreshButtons();
     populateNavPanel();
