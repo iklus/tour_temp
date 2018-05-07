@@ -171,10 +171,17 @@ function setupImage() {
     let location = data.tours[tour_id].locations[current_location_index];
     sky.setAttribute("material", "src", "#" + location + "360");
     let rotation = data.locations[location].rotation;
-    document.getElementById('player').setAttribute(
+    let player = document.getElementById('player');
+    let mainCamera = document.getElementById('mainCamera');
+    player.removeAttribute('look-controls');
+    player.removeAttribute('rotation');
+    mainCamera.setAttribute(
         'rotation',
-        rotation.x + " " + rotation.y + " " + rotation.z
+        rotation.x + " " +
+        rotation.y + " " +
+        rotation.z
     );
+    player.setAttribute('look-controls', "reverseMouseDrag: true");
     refreshCaption();
 }
 
