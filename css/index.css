@@ -16,10 +16,11 @@ body {
 
 
 /* Navbar */
-nav {
+.navbar {
   background-color: #FFFFFF;
   color: #565A5C;
   font-family: 'Proxima Nova', 'Khula', Arial, sans-serif !important;
+  padding: 5px 16px !important;
 }
 
 .nav-menu {
@@ -27,17 +28,30 @@ nav {
   font-size: 57px;
 }
 
+.navbar-brand{
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
 .nav-link {
   color:#565A5C;
   font-size: 24px;
 }
 
-.nav-item.active .nav-link{
-  color: #00AAC8;
+.nav-link:hover{
+  color:#73b420 !important;
 }
-.nav-item:hover .nav-link,
-.nav-menu:hover {
-  color: #00AAC8;
+
+.nav-link:focus {
+  color: #73b420 !important;
+}
+
+.dropdown-item {
+  color: #565A5C !important;
+}
+
+.dropdown-item:hover {
+  color: #00AAC8 !important;
 }
 
 /* Jumbotron */
