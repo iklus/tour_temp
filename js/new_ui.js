@@ -426,10 +426,11 @@ window.onload = function() {
     enter_tour_btn = document.getElementById("enter_tour_btn");
     enter_tour_btn.addEventListener("click", function() {
         document.querySelector(".overlay").style.display = "none";
-        setState("sound", true);
         change_location();
-        setTimeout(function(){action_btn.close();}, 3000);
-        setTimeout(function(){nav_panel.close();}, 4000);
+        nav_panel.open();
+        action_btn.open();
+        setTimeout(function(){action_btn.close();}, 2000);
+        setTimeout(function(){nav_panel.close();}, 1000);
     });
 
     refreshButtons();
@@ -510,10 +511,6 @@ window.onload = function() {
         setState("captions", true);
         nav_panel.close_old.call(this);
     }
-
-    nav_panel.open();
-    action_btn.open();
-
 
     // Bug fix: nav_panel must be closed when window is resized
     function resizeHandler() {

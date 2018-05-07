@@ -18,7 +18,7 @@ function getAllData() {
                   ]
               },
               "proton_pediatric_tour": {
-                  "name": "Proton Pediatric Tour",
+                  "name": "Proton Children's Tour",
                   "locations": [
                       "flagpole_building_b",
                       "building_b_lobby",
@@ -227,7 +227,7 @@ function getAllData() {
                   }
               },
               "building_b_ucmc": {
-                  "name": "Building B: UCMC",
+                  "name": "Building B: UC Health",
                   "locations": {
                       "ucmc_front_desk": {
                           "x": 0.7242760834670946,
@@ -417,8 +417,8 @@ function getAllData() {
               "childrens_gantry_control_room": {
                   "name": "Children's Gantry Control Room",
                   "rotation": {
-                      "x": 0.688,
-                      "y": 101.872,
+                      "x": -0.068,
+                      "y": 2.122,
                       "z": 0
                   },
                   "transcript": "External control room.  Here is where the gantry is controlled by members of your care team during treatment delivery, so you the patient can feel safe knowing they are watching from close by."
@@ -426,8 +426,8 @@ function getAllData() {
               "childrens_gantry_entrance": {
                   "name": "Children's Gantry Entrance",
                   "rotation": {
-                      "x": -4.354,
-                      "y": -18.908,
+                      "x": 0.032,
+                      "y": 0.55,
                       "z": 0
                   },
                   "transcript": "This is the entrance to the gantry of the Cincinnati Children's. A gantry uses a proton beam to destroy kill cancer cells while minimizing damage to surrounding healthy tissue and organs in a process called proton therapy."
@@ -588,7 +588,7 @@ function getAllData() {
               "outpatient_nutrition": {
                   "name": "Outpatient Nutrition Room",
                   "rotation": {
-                      "x": 1.260,
+                      "x": 1.26,
                       "y": -1096.297,
                       "z": 0
                   },
@@ -622,7 +622,7 @@ function getAllData() {
                   "transcript": "When a patient first arrives at the outpatient center, his or her vitals are checked here."
               },
               "outside_ucmc": {
-                  "name": "Outside UCMC",
+                  "name": "Outside UC Health",
                   "rotation": {
                       "x": 0,
                       "y": 0,
@@ -649,7 +649,7 @@ function getAllData() {
                   "transcript": "In Liberty inpatient rooms you will enjoy all of the same comforts and safety features as our main campus with the added bonus of natural light."
               },
               "ucmc_front_desk": {
-                  "name": "UCMC Front Desk",
+                  "name": "UC Health Front Desk",
                   "rotation": {
                       "x": -7.719,
                       "y": -34.263,
@@ -658,7 +658,7 @@ function getAllData() {
                   "transcript": "Here is the welcome desk of the Liberty A building"
               },
               "ucmc_gantry": {
-                  "name": "UCMC Gantry",
+                  "name": "UC Health Gantry",
                   "rotation": {
                       "x": -0.344,
                       "y": 66.692,
@@ -667,7 +667,7 @@ function getAllData() {
                   "transcript": "Here radiation therapy staff help patients prepare for treatment. First, imaging is performed to aim the proton beam, and then the treatment is delivered. Treatment session can last for about 45 minutes, but the beam will be on for only a few minutes."
               },
               "ucmc_gantry_entrance": {
-                  "name": "UCMC Gantry Entrance",
+                  "name": "UC Health Gantry Entrance",
                   "rotation": {
                       "x": -3.438,
                       "y": -13.751,
@@ -676,7 +676,7 @@ function getAllData() {
                   "transcript": "This is the entrance to the gantry of the UCMC. A gantry uses a proton beam to destroy cancer cells while minimizing damage to surrounding healthy tissue and organs."
               },
               "ucmc_gantry_hallway": {
-                  "name": "UCMC Gantry Hallway",
+                  "name": "UC Health Gantry Hallway",
                   "rotation": {
                       "x": -2.979,
                       "y": -27.158,
@@ -685,7 +685,7 @@ function getAllData() {
                   "transcript": "This winding hallway made of thick concrete walls is here to absorb any secondary radiation."
               },
               "ucmc_gantry_machine": {
-                  "name": "UCMC Gantry Machine",
+                  "name": "UC Health Gantry Machine",
                   "rotation": {
                       "x": -2.636,
                       "y": -369.558,
@@ -694,7 +694,7 @@ function getAllData() {
                   "transcript": "This is the inner workings of a gantry.  The large machinery allows the entire gantry to be rotated so that the proton beam can get into any tight spot that is needed."
               },
               "ucmc_waiting_area": {
-                  "name": "UCMC Waiting Area",
+                  "name": "UC Health Waiting Area",
                   "rotation": {
                       "x": 0,
                       "y": -172.231,
