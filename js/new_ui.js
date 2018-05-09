@@ -434,10 +434,11 @@ window.onload = function() {
     enter_tour_btn.addEventListener("click", function() {
         document.querySelector(".overlay").style.display = "none";
         change_location();
-        nav_panel.open();
-        action_btn.open();
-        setTimeout(function(){action_btn.close();}, 2000);
-        setTimeout(function(){nav_panel.close();}, 1000);
+        setTimeout(function(){nav_panel.open();}, 1000);
+        setTimeout(function(){nav_panel.close();}, 3000);
+
+        setTimeout(function(){action_btn.open();}, 3500);
+        setTimeout(function(){action_btn.close();}, 5500);
     });
 
     refreshButtons();
