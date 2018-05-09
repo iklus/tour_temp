@@ -214,7 +214,7 @@ function refreshAudio() {
 
 function assetsLoaded() {
     loader.style.display = "none";
-    enter_tour_btn.style.visibility = "visible";
+    enter_tour_btn.style.display = "block";
 }
 
 function loadAssets() {

@@ -420,7 +420,7 @@
 }
 
 #enter_tour_btn {
-    visibility: hidden;
+    display: none;
 }
 
 #top-help {
@@ -434,3 +434,8 @@
     padding-bottom: 68px;
 }
 
+.loader-container .green-pill {
+    height: 40px;
+    line-height: 40px;
+    margin: 5px auto;
+}
