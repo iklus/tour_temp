@@ -315,6 +315,12 @@
     object-fit: contain;
 }
 
+@media only screen and (min-width: 500px) {
+    #map-img {
+        height: calc(100vh - 126px);
+    }
+}
+
 .map-location {
     position: absolute;
     cursor: pointer;
