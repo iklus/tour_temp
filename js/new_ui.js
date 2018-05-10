@@ -1,3 +1,5 @@
+(function(){
+    "use strict";
 let a_scene;
 let sky;
 let map_overlay;
@@ -524,3 +526,4 @@ window.onload = function() {
     window.addEventListener("resize", resizeHandler);
 
 };
+})();
