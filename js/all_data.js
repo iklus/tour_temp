@@ -1,5 +1,6 @@
 // Contains all of the data for each scene
 function getAllData() {
+  "use strict";
   var all_data =
       {
           "tours": {
