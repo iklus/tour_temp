@@ -52,27 +52,27 @@ function getAllData() {
                   "locations": [
                       "research_gantry",
                       "inside_research_gantry",
-                      "cyclotron_control_room",
                       "cyclotron_pump",
                       "cyclotron_stairs_top",
                       "cyclotron_and_beam_line",
                       "beam_line_door_1",
                       "beam_line_turn",
                       "gantry_connection",
-                      "beam_line"
+                      "beam_line",
+                      "cyclotron_control_room"
                   ]
               },
               "cyclotron_tour": {
                   "name": "Cyclotron Tour",
                   "locations": [
-                      "cyclotron_control_room",
                       "cyclotron_pump",
                       "cyclotron_stairs_top",
                       "cyclotron_and_beam_line",
                       "beam_line_door_1",
                       "beam_line_turn",
                       "gantry_connection",
-                      "beam_line"
+                      "beam_line",
+                      "cyclotron_control_room"
                   ]
               },
               "cbdi_outpatient_tour": {
@@ -317,7 +317,7 @@ function getAllData() {
                   "transcript": "This is the inpatient registration desk.  They will get you checked in for your inpatient stay."
               },
               "beam_line": {
-                  "name": "Beam Line",
+                  "name": "Beam Line Middle",
                   "rotation": {
                       "x": -1.146,
                       "y": 163.522,
@@ -332,10 +332,10 @@ function getAllData() {
                       "y": 26.241,
                       "z": 0
                   },
-                  "transcript": "The beam line contains magnets to focus and bend the proton beam to the correct specifications."
+                  "transcript": "The cyclotron accelerates protons using a static magnetic field and a rapidly changing electric field."
               },
               "beam_line_turn": {
-                  "name": "Beam Line 2",
+                  "name": "Beam Line Turn",
                   "rotation": {
                       "x": 0.229,
                       "y": -130.52,
