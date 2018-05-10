@@ -173,15 +173,8 @@ function setupImage() {
     let rotation = data.locations[location].rotation;
     let player = document.getElementById('player');
     let mainCamera = document.getElementById('mainCamera');
-    player.removeAttribute('look-controls');
-    player.removeAttribute('rotation');
-    mainCamera.setAttribute(
-        'rotation',
-        rotation.x + " " +
-        rotation.y + " " +
-        rotation.z
-    );
-    player.setAttribute('look-controls', "reverseMouseDrag: true");
+    mainCamera.components["look-controls"].yawObject.rotation.set(0, rotation.y * (2 * 3.14 / 360), 0)
+    mainCamera.components["look-controls"].pitchObject.rotation.set(rotation.x * (2 * 3.14 / 360), 0, 0)
     refreshCaption();
 }
 

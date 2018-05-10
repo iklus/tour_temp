@@ -23,8 +23,8 @@
 <body>
     <a-scene vr-mode-ui="enabled: false" cursor="rayOrigin: mouse">
         <a-sky id="image-360" radius="105"></a-sky>
-        <a-entity id="player" position="0 2 0" look-controls="reverseMouseDrag: true" >
-            <a-entity id="mainCamera" camera mouse-cursor></a-entity>
+        <a-entity id="player" position="0 2 0">
+            <a-entity id="mainCamera" camera mouse-cursor look-controls="reverseMouseDrag: true"></a-entity>
         </a-entity>
     </a-scene>
     <div class="fixed-action-btn">
