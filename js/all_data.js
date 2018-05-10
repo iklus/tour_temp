@@ -325,7 +325,7 @@ function getAllData() {
                   "transcript": "The beam line contains magnets to focus and bend the proton beam to the correct specifications."
               },
               "beam_line_door_1": {
-                  "name": "Beam Line: Door 1",
+                  "name": "Beam Line",
                   "rotation": {
                       "x": 1.146,
                       "y": 26.241,
@@ -334,7 +334,7 @@ function getAllData() {
                   "transcript": "The beam line contains magnets to focus and bend the proton beam to the correct specifications."
               },
               "beam_line_turn": {
-                  "name": "Beam Line Turn",
+                  "name": "Beam Line 2",
                   "rotation": {
                       "x": 0.229,
                       "y": -130.52,
@@ -352,7 +352,7 @@ function getAllData() {
                   "transcript": "Further down is the cafeteria."
               },
               "building_b_childrens_desk": {
-                  "name": "Building B: Children's Desk",
+                  "name": "Nurse's Station",
                   "rotation": {
                       "x": 0.917,
                       "y": -130.061,
@@ -406,7 +406,7 @@ function getAllData() {
                   "transcript": "Here is the Child Life Activity Center. Within it you will find many toys and activities for patients to play and interact with. Hours vary, so check with your care team to see when it is open."
               },
               "childrens_gantry": {
-                  "name": "Children's Gantry",
+                  "name": "Gantry",
                   "rotation": {
                       "x": -6.073,
                       "y": -28.419,
@@ -415,7 +415,7 @@ function getAllData() {
                   "transcript": "Here radiation therapy staff help patients prepare for treatment. First, imaging is performed to aim the proton beam, and then the treatment is delivered. Treatment session can last for about 45 minutes, but the beam will only be on for a few minutes."
               },
               "childrens_gantry_control_room": {
-                  "name": "Children's Gantry Control Room",
+                  "name": "Gantry Control Room",
                   "rotation": {
                       "x": -0.068,
                       "y": 2.122,
@@ -424,7 +424,7 @@ function getAllData() {
                   "transcript": "External control room.  Here is where the gantry is controlled by members of your care team during treatment delivery, so you the patient can feel safe knowing they are watching from close by."
               },
               "childrens_gantry_entrance": {
-                  "name": "Children's Gantry Entrance",
+                  "name": "Gantry Entrance",
                   "rotation": {
                       "x": 0.032,
                       "y": 0.55,
@@ -433,7 +433,7 @@ function getAllData() {
                   "transcript": "This is the entrance to the gantry of the Cincinnati Children's. A gantry uses a proton beam to destroy kill cancer cells while minimizing damage to surrounding healthy tissue and organs in a process called proton therapy."
               },
               "childrens_gantry_hallway": {
-                  "name": "Children's Gantry Hallway",
+                  "name": "Gantry Hallway",
                   "rotation": {
                       "x": -2.75,
                       "y": -24.064,
@@ -442,7 +442,7 @@ function getAllData() {
                   "transcript": "This winding hallway made of thick concrete walls is here to absorb any secondary radiation."
               },
               "childrens_gantry_machine": {
-                  "name": "Children's Gantry Machine",
+                  "name": "Gantry Inside Look",
                   "rotation": {
                       "x": 2.979,
                       "y": 129.947,
@@ -478,7 +478,7 @@ function getAllData() {
                   "transcript": "Here is where the cyclotron is controlled and monitored."
               },
               "cyclotron_pump": {
-                  "name": "Cyclotron Pump",
+                  "name": "Cyclotron",
                   "rotation": {
                       "x": 1.833,
                       "y": -135.791,
@@ -487,7 +487,7 @@ function getAllData() {
                   "transcript": "This is the cyclotron and beam line.  The cyclotron is a type of particle accelerator that creates a proton beam and the beam line delivers the beam to the gantries for proton therapy."
               },
               "cyclotron_stairs_top": {
-                  "name": "Cyclotron Stairs Top",
+                  "name": "Cyclotron 2",
                   "rotation": {
                       "x": -13.986,
                       "y": -209.473,
@@ -496,7 +496,7 @@ function getAllData() {
                   "transcript": "The particle beam is made up of protons taken from hydrogen atoms."
               },
               "family_center": {
-                  "name": "Family Center",
+                  "name": "Family Resource Center",
                   "rotation": {
                       "x": -0.573,
                       "y": -219.214,
@@ -514,7 +514,7 @@ function getAllData() {
                   "transcript": "Welcome to the Family Lounge. This is where families can take a break and enjoy a meal."
               },
               "flagpole_building_a": {
-                  "name": "Flagpole",
+                  "name": "Main Entrance",
                   "rotation": {
                       "x": 12.032,
                       "y": 82.162,
@@ -523,7 +523,7 @@ function getAllData() {
                   "transcript": "Welcome to Cincinnati Children's Liberty Campus."
               },
               "flagpole_building_b": {
-                  "name": "Flagpole",
+                  "name": "Main Entrance",
                   "rotation": {
                       "x": 9.969,
                       "y": -35.18,
@@ -577,7 +577,7 @@ function getAllData() {
                   "transcript": "This is the Outpatient Triage Desk. "
               },
               "outpatient_nurses_station": {
-                  "name": "Outpatient Nurses Station",
+                  "name": "Nurse's Station",
                   "rotation": {
                       "x": -0.229,
                       "y": -944.807,
@@ -586,7 +586,7 @@ function getAllData() {
                   "transcript": "The nurses station is centrilized so that the nurses can easliy monitor all of the rooms."
               },
               "outpatient_nutrition": {
-                  "name": "Outpatient Nutrition Room",
+                  "name": "Nutrition Room",
                   "rotation": {
                       "x": 1.26,
                       "y": -1096.297,
@@ -613,7 +613,7 @@ function getAllData() {
                   "transcript": "The rooms are equiped with the Get Well Network on TV.  This will greet patients as they enter the room and has access to multiple streaming options."
               },
               "outpatient_triage_desk": {
-                  "name": "Outpatient Triage Desk",
+                  "name": "Triage Desk",
                   "rotation": {
                       "x": 0.144,
                       "y": -801.568,
@@ -640,7 +640,7 @@ function getAllData() {
                   "transcript": "This is the entrance to the research gantry.  This gantry is one of the only gantries in the world to be dedicated for research."
               },
               "stardome_hallway": {
-                  "name": "Stardome Hallway",
+                  "name": "Star Dome Hallway",
                   "rotation": {
                       "x": 0.802,
                       "y": -357.64,
