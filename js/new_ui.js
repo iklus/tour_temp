@@ -196,9 +196,12 @@ function refreshCaption() {
 function refreshAudio() {
     let location = data.tours[tour_id].locations[current_location_index];
     var sounds = document.getElementsByTagName("audio");
-    for(i=0; i<sounds.length; i++) {
-        sounds[i].pause();
-        sounds[i].currentTime = 0;
+    for(let i=0; i<sounds.length; i++) {
+        let sound=sounds[i];
+        sound.addEventListener('loadedmetadata',function(){
+            sound.pause();
+            sound.currentTime = 0;
+        });
     }
     if (states.sound && !states.map && data.locations[location].transcript != "") {
         document.getElementById(location + "Audio").play();
