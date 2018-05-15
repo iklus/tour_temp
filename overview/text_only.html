@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Tour Output</title>
+		<script type="text/javascript" src="../js/all_data_v2.js"></script>
+	</head>
+	<body>
+		<div id="tours">
+		</div>
+		<script type="application/javascript">
+		// Function from all_data.js
+		var data = getAllData();
+			window.onload = function() {
+				var tours_div = document.getElementById('tours');
+				Object.keys(data.tours).forEach(function(key) {
+					var h1 = document.createElement("h1");
+					h1.appendChild(document.createTextNode(data.tours[key].name));
+					tours_div.appendChild(h1);
+					data.tours[key].locations.forEach(function(location) {
+						var h2 = document.createElement("h2");
+						h2.appendChild(document.createTextNode(location));
+						var p = document.createElement("p");
+						p.appendChild(document.createTextNode(data.locations[location].transcript));
+						tours_div.appendChild(h2);
+						tours_div.appendChild(p);
+					});
+					var hr = document.createElement("hr");
+					tours_div.appendChild(hr);
+				});
+			};
+		</script>
+	</body>
+</html>
