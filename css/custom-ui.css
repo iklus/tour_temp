@@ -100,8 +100,8 @@
     position: fixed;
     background: white;
     font-family: 'Proxima Nova', 'Khula', Arial, sans-serif;
-    font-size: 8pt;
-    line-height: 10pt;
+    font-size: 10pt;
+    line-height: 11pt;
     scrollbar-base-color: #CA5699;
     border-radius: 10px;
     overflow:auto;
