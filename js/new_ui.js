@@ -207,6 +207,8 @@ function refreshAudio() {
     }
     if (states.sound && !states.map && data.locations[location].transcript != "") {
         document.getElementById(location + "Audio").play();
+    } else {
+        document.getElementById(location + "Audio").pause();
     }
 }
 
