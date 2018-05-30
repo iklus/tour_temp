@@ -79,7 +79,7 @@ function getAllData() {
                   "name": "CBDI Outpatient Tour",
                   "locations": [
                       "flagpole_building_b",
-                      "campus_info",
+                      "building_b_lobby",
                       "family_center",
                       "outpatient_entrance",
                       "outpatient_triage_desk",
@@ -432,7 +432,7 @@ function getAllData() {
                       "y": 0.55,
                       "z": 0
                   },
-                  "transcript": "This is the entrance to the gantry of the Cincinnati Children's. A gantry uses a proton beam to destroy kill cancer cells while minimizing damage to surrounding healthy tissue and organs in a process called proton therapy."
+                  "transcript": "This is the entrance to the gantry. A gantry uses a proton beam to destroy cancer cells while minimizing damage to surrounding healthy tissue and organs in a process called proton therapy."
               },
               "childrens_gantry_hallway": {
                   "name": "Gantry Hallway",
@@ -477,7 +477,7 @@ function getAllData() {
                       "y": -184.149,
                       "z": 0
                   },
-                  "transcript": "Here is where the cyclotron is controlled and monitored."
+                  "transcript": "You've arrived at the cyclotron control room where the cyclotron is controlled and monitored."
               },
               "cyclotron_pump": {
                   "name": "Cyclotron",
@@ -504,7 +504,7 @@ function getAllData() {
                       "y": -219.214,
                       "z": 0
                   },
-                  "transcript": "In the Family Resource Center we have computers and couches to allow families to work, or take a break and relax."
+                  "transcript": "In the Family Resource Center we have computers and comfortable chairs to allow families to work, or take a break and relax."
               },
               "family_lounge": {
                   "name": "Family Lounge",
@@ -576,7 +576,7 @@ function getAllData() {
                       "y": -898.169,
                       "z": 0
                   },
-                  "transcript": "This is the Outpatient Triage Desk. "
+                  "transcript": "The entrace to the CBDI outpatient area is on the second floor."
               },
               "outpatient_nurses_station": {
                   "name": "Nurse's Station",
@@ -603,7 +603,7 @@ function getAllData() {
                       "y": -1013.792,
                       "z": 0
                   },
-                  "transcript": "The rooms are equipped with Telemedicine, which allows you to video call your doctor if they are in another building or at the Burnett Campus."
+                  "transcript": "You've arrived at your outpatient room. Each room has a TV that features the Get Well network with access to multiple streaming options."
               },
               "outpatient_room_chair": {
                   "name": "Outpatient Room 2",
@@ -612,7 +612,7 @@ function getAllData() {
                       "y": -1149.583,
                       "z": 0
                   },
-                  "transcript": "You've arrived at your outpatient room. Each room has a TV that features the Get Well network with access to multiple streaming options."
+                  "transcript": "The rooms are also equipped with Telemedicine, which allows you to video call your doctor if they are in another building or at the Burnet Campus."
               },
               "outpatient_triage_desk": {
                   "name": "Triage Desk",
@@ -648,7 +648,7 @@ function getAllData() {
                       "y": -357.64,
                       "z": 0
                   },
-                  "transcript": "In Liberty inpatient rooms you will enjoy all of the same comforts and safety features as our main campus with the added bonus of natural light."
+                  "transcript": "The theme of the 4th floor is stars and the universe. You'll notice the stars on the floor and walls and constallations in the halls."
               },
               "ucmc_front_desk": {
                   "name": "Registration Desk",
@@ -711,7 +711,7 @@ function getAllData() {
                       "y": 26.7,
                       "z": 0
                   },
-                  "transcript": "Here is the welcome desk of the Liberty A building."
+                  "transcript": "Immediately after walking in the door, you'll see the welcome desk for the Liberty A building."
               }
           }
       };
